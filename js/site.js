@@ -1,16 +1,18 @@
 
-document.querySelectorAll('[data-menu]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const nav=document.querySelector('.nav-links');
-    nav.style.display=nav.style.display==='flex'?'none':'flex';
-    if(nav.style.display==='flex'){nav.style.flexDirection='column';nav.style.position='absolute';nav.style.top='70px';nav.style.right='15px';nav.style.background='#03132f';nav.style.padding='18px';nav.style.borderRadius='6px';}
-  });
+const menu=document.querySelector('[data-menu]');
+const nav=document.querySelector('.nav-links');
+if(menu&&nav){menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',nav.classList.contains('open'));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));}
+const page=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('.nav-links a').forEach(a=>{if(a.getAttribute('href')===page)a.classList.add('active');});
+
+document.querySelectorAll('form[data-mailto]').forEach(form=>{
+ form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const data=new FormData(form); const subject=data.get('subject')||'Website inquiry';
+  const lines=[]; for(const [k,v] of data.entries()){if(k!=='subject'&&v) lines.push(`${k}: ${v}`)}
+  const href=`mailto:${form.dataset.mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  const msg=form.querySelector('.form-msg'); if(msg) msg.textContent='Opening your email app with the completed inquiry…';
+  window.location.href=href;
+ });
 });
-document.querySelectorAll('form[data-demo]').forEach(form=>{
-  form.addEventListener('submit',e=>{
-    e.preventDefault();
-    const msg=form.querySelector('[data-form-msg]');
-    if(msg) msg.textContent='Thank you. This demonstration form is not connected to a live submission system yet.';
-    form.reset();
-  });
-});
+const year=document.querySelector('[data-year]'); if(year) year.textContent=new Date().getFullYear();

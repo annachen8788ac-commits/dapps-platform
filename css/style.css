@@ -253,7 +253,7 @@ button{
       rgba(2,14,37,.30) 70%,
       rgba(2,14,37,.42) 100%
     ),
-    url("../assets/hero-los-angeles.jpg");
+    url("../assets/ars-m-nt-DeOer6k8-unsplash.jpg");
 
   background-size:cover;
   background-position:center 58%;
@@ -599,7 +599,7 @@ button{
       rgba(3,20,49,.05),
       rgba(3,20,49,0) 48%
     ),
-    url("../assets/los-angeles-operations.jpg");
+    url("../assets/Downtown_LA_(Unsplash).jpg");
 
   background-size:cover;
   background-position:center;
@@ -647,7 +647,7 @@ button{
 
 .image-strip{
   display:grid;
-  grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.4fr) minmax(0,.4fr);
   min-height:450px;
 }
 
@@ -662,7 +662,7 @@ button{
       rgba(3,20,49,0) 42%,
       rgba(3,20,49,.72) 100%
     ),
-    url("../assets/los-angeles-city.jpg")
+    url("../assets/careers-hero.jpg")
     center/cover no-repeat;
 
   transition:background-position .7s ease;
@@ -696,13 +696,34 @@ button{
       rgba(3,20,49,.04),
       rgba(3,20,49,.64)
     ),
-    url("../assets/los-angeles-office.jpg")
+    url("../assets/levi-meir-clancy-sPP-GG8_M98-unsplash.jpg")
     center/cover no-repeat;
 
   transition:background-position .7s ease;
 }
 
 .image-strip-side:hover{
+  background-position:center 46%;
+}
+
+.image-strip-detail{
+  position:relative;
+  overflow:hidden;
+  min-height:450px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3,20,49,.02),
+      rgba(3,20,49,.58)
+    ),
+    url("../assets/photo-1658849110893-841726ccd937.avif")
+    center/cover no-repeat;
+
+  transition:background-position .7s ease;
+}
+
+.image-strip-detail:hover{
   background-position:center 46%;
 }
 
@@ -725,7 +746,7 @@ button{
       rgba(3,20,49,.55) 45%,
       rgba(3,20,49,.20) 100%
     ),
-    url("../assets/los-angeles-workspace.jpg")
+    url("../assets/Downtown_LA_(Unsplash).jpg")
     center/cover no-repeat;
 
   color:#fff;
@@ -1412,7 +1433,7 @@ button{
         rgba(2,14,37,.72) 48%,
         rgba(2,14,37,.65) 100%
       ),
-      url("../assets/hero-los-angeles.jpg");
+      url("../assets/ars-m-nt-DeOer6k8-unsplash.jpg");
 
     background-position:center;
   }
@@ -1498,7 +1519,8 @@ button{
     min-height:330px;
   }
 
-  .image-strip-side{
+  .image-strip-side,
+  .image-strip-detail{
     min-height:300px;
   }
 
@@ -1766,7 +1788,8 @@ button{
     min-height:280px;
   }
 
-  .image-strip-side{
+  .image-strip-side,
+  .image-strip-detail{
     min-height:260px;
   }
 

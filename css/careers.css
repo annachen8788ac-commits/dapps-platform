@@ -943,7 +943,7 @@ table {
     .careers-page .container,
     .job-page .container,
     .container {
-        width: calc(100% - 36px);
+        width: calc(100% - 44px);
 
         max-width: none;
 
@@ -1439,7 +1439,7 @@ table {
     }
 
     .job-hero .container {
-        width: calc(100% - 36px) !important;
+        width: calc(100% - 44px) !important;
 
         max-width: none !important;
 
@@ -2017,7 +2017,7 @@ table {
     .job-page .container,
     .container {
 
-        width: calc(100% - 30px);
+        width: calc(100% - 40px);
     }
 
 
@@ -2075,7 +2075,7 @@ table {
 
     .job-hero .container {
 
-        width: calc(100% - 30px) !important;
+        width: calc(100% - 40px) !important;
     }
 
     .job-hero h1 {
@@ -2122,7 +2122,7 @@ table {
     .job-page .container,
     .container {
 
-        width: calc(100% - 24px);
+        width: calc(100% - 32px);
     }
 
     .careers-hero h1 {
@@ -2134,7 +2134,7 @@ table {
 
     .job-hero .container {
 
-        width: calc(100% - 24px) !important;
+        width: calc(100% - 32px) !important;
     }
 
     .job-hero h1 {

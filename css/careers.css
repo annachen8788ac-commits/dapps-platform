@@ -4,11 +4,10 @@
    FINAL RESPONSIVE VERSION
 
    DESKTOP:
-   Existing desktop visual structure remains unchanged.
+   Existing desktop layout remains unchanged.
 
    MOBILE:
-   Job description becomes a clean single-column layout.
-   No squeezed two-column sections.
+   True single-column reading layout.
    No horizontal scrolling.
 ========================================================= */
 
@@ -818,7 +817,6 @@ body {
 
 /* =========================================================
    JOB DESCRIPTION
-   DESKTOP
 ========================================================= */
 
 .job-hero {
@@ -917,14 +915,14 @@ table {
 
 /* =========================================================
    MOBILE
-   720px AND BELOW
+   TRUE SINGLE COLUMN
 ========================================================= */
 
 @media (max-width: 720px) {
 
-    /* =====================================================
-       GLOBAL MOBILE
-    ===================================================== */
+    /* -----------------------------------------------------
+       GLOBAL
+    ----------------------------------------------------- */
 
     html,
     body {
@@ -944,9 +942,9 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        CAREERS HERO
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-hero {
         min-height: 620px;
@@ -1011,10 +1009,6 @@ table {
         font-size: 12px;
     }
 
-    .careers-hero-meta span + span::before {
-        margin-right: 8px;
-    }
-
     .careers-primary-btn {
         width: 100%;
 
@@ -1022,16 +1016,23 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        CAREERS INTRO
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-intro {
         padding: 76px 0;
     }
 
     .careers-two-column {
-        display: block;
+        display: block !important;
+
+        width: 100%;
+    }
+
+    .careers-two-column > * {
+        width: 100%;
+        min-width: 0;
     }
 
     .careers-two-column > * + * {
@@ -1071,9 +1072,9 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        FOUNDATION
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-foundation {
         padding: 76px 0 80px;
@@ -1096,7 +1097,9 @@ table {
     }
 
     .foundation-grid {
-        grid-template-columns: 1fr;
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
 
         border-left: 0;
     }
@@ -1122,16 +1125,16 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        OPEN POSITIONS
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-positions {
         padding: 78px 0 85px;
     }
 
     .career-job-card {
-        display: block;
+        display: block !important;
 
         padding: 30px 0;
     }
@@ -1139,6 +1142,12 @@ table {
     .career-job-card:hover {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .career-job-main,
+    .career-job-action {
+        width: 100%;
+        min-width: 0;
     }
 
     .career-job-category {
@@ -1194,16 +1203,21 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        EXECUTIVE
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-executive {
         padding: 80px 0;
     }
 
     .careers-executive-grid {
-        display: block;
+        display: block !important;
+    }
+
+    .careers-executive-grid > * {
+        width: 100%;
+        min-width: 0;
     }
 
     .careers-executive-grid > * + * {
@@ -1219,7 +1233,9 @@ table {
     }
 
     .executive-grid {
-        grid-template-columns: 1fr;
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
 
         border-left: 0;
     }
@@ -1241,9 +1257,9 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        BENEFITS
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-benefits {
         padding: 80px 0;
@@ -1262,7 +1278,9 @@ table {
     }
 
     .benefits-grid {
-        grid-template-columns: 1fr;
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
 
         gap: 1px;
     }
@@ -1282,16 +1300,21 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        WORK
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-work {
         padding: 78px 0;
     }
 
     .careers-work-grid {
-        display: block;
+        display: block !important;
+    }
+
+    .careers-work-grid > * {
+        width: 100%;
+        min-width: 0;
     }
 
     .careers-work-grid > * + * {
@@ -1305,7 +1328,9 @@ table {
     }
 
     .work-options {
-        grid-template-columns: 1fr;
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
 
         margin-top: 28px;
     }
@@ -1317,9 +1342,9 @@ table {
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        FINAL CTA
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .careers-final {
         min-height: 550px;
@@ -1357,92 +1382,49 @@ table {
 
 
     /* =====================================================
-       =====================================================
-       JOB DESCRIPTION MOBILE
-       =====================================================
-       ===================================================== */
-
-
-    /* -----------------------------------------------------
-       JOB PAGE GLOBAL
-       ----------------------------------------------------- */
-
-    body:has(.job-hero) {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    body:has(.job-hero) main {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    body:has(.job-hero) main > section {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    body:has(.job-hero) .container {
-        width: calc(100% - 36px) !important;
-        max-width: none !important;
-    }
+       JOB DESCRIPTION PAGE
+       MOBILE ONLY
+    ===================================================== */
 
 
     /* -----------------------------------------------------
        JOB HERO
-       Clean mobile spacing
     ----------------------------------------------------- */
 
     .job-hero {
-        padding: 70px 0 58px !important;
+        padding: 72px 0 58px !important;
     }
 
     .job-hero .container {
-        position: relative;
-
         width: calc(100% - 36px) !important;
+        max-width: none !important;
     }
 
     .job-hero a {
-        display: inline-flex !important;
-
-        align-items: center;
-
-        margin-bottom: 27px !important;
+        margin-bottom: 28px !important;
 
         font-size: 13px !important;
-
-        line-height: 1.4 !important;
     }
 
     .job-hero h1 {
         display: block !important;
 
         width: 100% !important;
-
         max-width: 100% !important;
 
-        margin: 0 0 19px !important;
+        margin: 0 0 18px !important;
 
-        font-size: 42px !important;
+        font-size: 43px !important;
 
         line-height: 1.06 !important;
 
-        letter-spacing: -0.035em !important;
-
-        overflow-wrap: normal !important;
-
-        word-break: normal !important;
+        letter-spacing: -0.035em;
     }
 
     .job-hero p {
         display: block !important;
 
         width: 100% !important;
-
         max-width: 100% !important;
 
         margin: 0 !important;
@@ -1454,31 +1436,27 @@ table {
 
 
     /* -----------------------------------------------------
-       HERO META TAGS
+       JOB HERO META
     ----------------------------------------------------- */
 
     .job-hero > .container > div:last-child {
         display: flex !important;
 
-        width: 100% !important;
-
-        max-width: 100% !important;
-
         flex-direction: row !important;
 
         flex-wrap: wrap !important;
 
-        align-items: flex-start !important;
+        width: 100% !important;
+
+        max-width: 100% !important;
 
         gap: 8px !important;
 
-        margin-top: 28px !important;
+        margin-top: 27px !important;
     }
 
     .job-hero > .container > div:last-child span {
         display: inline-flex !important;
-
-        align-items: center;
 
         width: auto !important;
 
@@ -1489,31 +1467,67 @@ table {
         font-size: 11px !important;
 
         line-height: 1.3 !important;
-
-        white-space: normal !important;
     }
 
 
     /* -----------------------------------------------------
-       ALL JOB SECTIONS
+       EVERY JOB SECTION
     ----------------------------------------------------- */
 
     body:has(.job-hero) main > section {
+        width: 100% !important;
+
         padding-top: 68px !important;
 
         padding-bottom: 68px !important;
+
+        overflow: hidden;
+    }
+
+
+    /* -----------------------------------------------------
+       JOB SECTION CONTAINERS
+    ----------------------------------------------------- */
+
+    body:has(.job-hero) main > section > .container {
+        width: calc(100% - 36px) !important;
+
+        max-width: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
 
     /* -----------------------------------------------------
        IMPORTANT:
-       EVERY INLINE DESKTOP GRID
-       BECOMES ONE COLUMN
+       ALL INLINE GRID WRAPPERS
+       BECOME TRUE SINGLE COLUMN
     ----------------------------------------------------- */
 
     body:has(.job-hero)
-    main
-    section
+    main > section
+    .container
+    > div[style*="display:grid"] {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        grid-template-columns: none !important;
+
+        gap: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ALSO CATCH INLINE GRID WITHOUT display:grid
+    ----------------------------------------------------- */
+
+    body:has(.job-hero)
+    main > section
     .container
     > div[style*="grid-template-columns"] {
 
@@ -1525,20 +1539,17 @@ table {
 
         grid-template-columns: none !important;
 
-        grid-template-rows: none !important;
-
         gap: 0 !important;
     }
 
 
     /* -----------------------------------------------------
-       DIRECT CHILDREN OF THOSE GRIDS
-       NEVER STAY SIDE BY SIDE
+       CHILDREN OF MAIN JOB LAYOUT
+       EACH BECOMES FULL WIDTH
     ----------------------------------------------------- */
 
     body:has(.job-hero)
-    main
-    section
+    main > section
     .container
     > div[style*="grid-template-columns"]
     > div {
@@ -1547,20 +1558,22 @@ table {
 
         width: 100% !important;
 
+        max-width: 100% !important;
+
         min-width: 0 !important;
 
-        max-width: 100% !important;
+        margin-left: 0 !important;
+
+        margin-right: 0 !important;
     }
 
 
     /* -----------------------------------------------------
-       TITLE COLUMN → BODY COLUMN
-       Proper vertical separation
+       TITLE BLOCK → BODY BLOCK
     ----------------------------------------------------- */
 
     body:has(.job-hero)
-    main
-    section
+    main > section
     .container
     > div[style*="grid-template-columns"]
     > div + div {
@@ -1570,67 +1583,7 @@ table {
 
 
     /* -----------------------------------------------------
-       ALL NESTED CARD GRIDS
-       ALSO FORCE SINGLE COLUMN
-    ----------------------------------------------------- */
-
-    body:has(.job-hero)
-    section
-    div[style*="grid-template-columns:repeat"] {
-
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        grid-template-rows: none !important;
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        gap: 16px !important;
-    }
-
-    body:has(.job-hero)
-    section
-    div[style*="grid-template-columns: repeat"] {
-
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        grid-template-rows: none !important;
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        gap: 16px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       CARD WIDTH SAFETY
-    ----------------------------------------------------- */
-
-    body:has(.job-hero)
-    section
-    div[style*="background:#ffffff"] {
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        min-width: 0 !important;
-
-        padding: 25px !important;
-
-        overflow-wrap: break-word !important;
-    }
-
-
-    /* -----------------------------------------------------
-       HEADINGS
+       JOB H2
     ----------------------------------------------------- */
 
     body:has(.job-hero) h2 {
@@ -1647,18 +1600,19 @@ table {
 
         line-height: 1.1 !important;
 
-        letter-spacing: -0.035em !important;
-
-        overflow-wrap: normal !important;
-
-        word-break: normal !important;
+        letter-spacing: -0.035em;
     }
+
+
+    /* -----------------------------------------------------
+       JOB H3
+    ----------------------------------------------------- */
 
     body:has(.job-hero) h3 {
 
-        margin-top: 0 !important;
+        max-width: 100% !important;
 
-        margin-bottom: 13px !important;
+        margin-top: 0 !important;
 
         font-size: 18px !important;
 
@@ -1670,15 +1624,89 @@ table {
        JOB BODY TEXT
     ----------------------------------------------------- */
 
-    body:has(.job-hero) p {
+    body:has(.job-hero) main > section p {
 
         max-width: 100% !important;
 
         font-size: 15px !important;
 
         line-height: 1.78 !important;
+    }
 
-        overflow-wrap: break-word !important;
+
+    /* -----------------------------------------------------
+       ALL INLINE CARD GRIDS
+       2 COLUMN / 3 COLUMN → 1 COLUMN
+    ----------------------------------------------------- */
+
+    body:has(.job-hero)
+    main > section
+    div[style*="repeat(2,1fr)"] {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+    body:has(.job-hero)
+    main > section
+    div[style*="repeat(2, 1fr)"] {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+    body:has(.job-hero)
+    main > section
+    div[style*="repeat(3,1fr)"] {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+    body:has(.job-hero)
+    main > section
+    div[style*="repeat(3, 1fr)"] {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CARD BOXES
+    ----------------------------------------------------- */
+
+    body:has(.job-hero)
+    main > section
+    div[style*="background:#ffffff"] {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 25px !important;
     }
 
 
@@ -1699,29 +1727,18 @@ table {
 
     body:has(.job-hero) li {
 
-        margin-bottom: 13px !important;
+        margin-bottom: 13px;
 
-        font-size: 14px !important;
+        font-size: 14px;
 
-        line-height: 1.7 !important;
+        line-height: 1.7;
 
-        overflow-wrap: break-word !important;
-    }
-
-    body:has(.job-hero) li:last-child {
-
-        margin-bottom: 0 !important;
+        overflow-wrap: break-word;
     }
 
 
     /* -----------------------------------------------------
        EMPLOYMENT DETAILS
-       Desktop:
-       Label | Content
-
-       Mobile:
-       Label
-       Content
     ----------------------------------------------------- */
 
     body:has(.job-hero)
@@ -1733,16 +1750,13 @@ table {
 
         max-width: 100% !important;
 
-        min-width: 0 !important;
-
         grid-template-columns: none !important;
 
         gap: 0 !important;
 
         padding: 18px 0 !important;
-
-        overflow-wrap: break-word !important;
     }
+
 
     body:has(.job-hero)
     div[style*="grid-template-columns:220px 1fr"]
@@ -1752,12 +1766,13 @@ table {
 
         width: 100% !important;
 
-        margin: 0 0 7px !important;
+        margin-bottom: 7px !important;
 
         font-size: 14px !important;
 
-        line-height: 1.4 !important;
+        line-height: 1.5 !important;
     }
+
 
     body:has(.job-hero)
     div[style*="grid-template-columns:220px 1fr"]
@@ -1769,44 +1784,40 @@ table {
 
         max-width: 100% !important;
 
-        margin: 0 !important;
-
         font-size: 14px !important;
 
         line-height: 1.65 !important;
 
-        overflow-wrap: break-word !important;
+        overflow-wrap: break-word;
     }
 
 
     /* -----------------------------------------------------
-       ALL TABLE-LIKE ELEMENTS
+       ALL OTHER POSSIBLE 220PX GRID ROWS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) table {
+    body:has(.job-hero)
+    main > section
+    div[style*="220px"] {
 
-        display: block;
+        display: block !important;
 
         width: 100% !important;
 
         max-width: 100% !important;
 
-        overflow-x: auto;
+        grid-template-columns: none !important;
+
+        gap: 0 !important;
     }
 
 
     /* -----------------------------------------------------
-       LINKS / BUTTONS
+       CTA BUTTONS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) a {
-
-        max-width: 100%;
-
-        overflow-wrap: break-word;
-    }
-
     body:has(.job-hero)
+    main > section
     a[style*="background:#031431"] {
 
         display: flex !important;
@@ -1815,51 +1826,13 @@ table {
 
         max-width: 100% !important;
 
-        min-height: 50px !important;
+        justify-content: center !important;
 
         align-items: center !important;
 
-        justify-content: center !important;
+        min-height: 50px !important;
 
         padding: 14px 20px !important;
-    }
-
-
-    /* -----------------------------------------------------
-       SECTION INTERNAL SPACING
-       Prevent overly compressed mobile layout
-    ----------------------------------------------------- */
-
-    body:has(.job-hero)
-    section
-    .container
-    > div[style*="margin-bottom:50px"] {
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        margin-bottom: 34px !important;
-    }
-
-    body:has(.job-hero)
-    section
-    .container
-    > div[style*="margin-bottom:55px"] {
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        margin-bottom: 34px !important;
-    }
-
-    body:has(.job-hero)
-    section
-    .container
-    > div[style*="margin-bottom:18px"] {
-
-        max-width: 100% !important;
     }
 
 
@@ -1868,15 +1841,15 @@ table {
     ----------------------------------------------------- */
 
     body:has(.job-hero)
-    section:last-of-type {
+    main > section:last-of-type {
 
-        padding-top: 48px !important;
+        padding-top: 45px !important;
 
-        padding-bottom: 48px !important;
+        padding-bottom: 45px !important;
     }
 
     body:has(.job-hero)
-    section:last-of-type a {
+    main > section:last-of-type a {
 
         font-size: 14px !important;
     }
@@ -1886,11 +1859,8 @@ table {
        FOOTER
     ----------------------------------------------------- */
 
-    body:has(.job-hero) .footer {
-
+    .footer {
         width: 100%;
-
-        max-width: 100%;
 
         overflow: hidden;
     }
@@ -1907,12 +1877,9 @@ table {
     .careers-page .container,
     .job-page .container,
     .container {
-
         width: calc(100% - 30px);
     }
 
-
-    /* Careers */
 
     .careers-hero {
         min-height: 600px;
@@ -1930,17 +1897,17 @@ table {
         font-size: 15px;
     }
 
+
     .careers-intro,
     .careers-foundation,
     .careers-positions,
     .careers-executive,
     .careers-benefits,
     .careers-work {
-
         padding-top: 65px;
-
         padding-bottom: 68px;
     }
+
 
     .careers-intro h2,
     .careers-section-heading h2,
@@ -1951,23 +1918,32 @@ table {
         font-size: 32px;
     }
 
+
     .career-job-main h3 {
         font-size: 24px;
     }
 
 
-    /* =====================================================
-       JOB DESCRIPTION
-    ===================================================== */
+    /* -----------------------------------------------------
+       JOB PAGE SMALL MOBILE
+    ----------------------------------------------------- */
 
-    body:has(.job-hero) .container {
+    body:has(.job-hero)
+    main > section {
 
-        width: calc(100% - 30px) !important;
+        padding-top: 58px !important;
+
+        padding-bottom: 58px !important;
     }
 
     .job-hero {
 
         padding: 62px 0 50px !important;
+    }
+
+    .job-hero .container {
+
+        width: calc(100% - 30px) !important;
     }
 
     .job-hero h1 {
@@ -1977,20 +1953,6 @@ table {
         line-height: 1.06 !important;
     }
 
-    .job-hero p {
-
-        font-size: 15px !important;
-
-        line-height: 1.72 !important;
-    }
-
-    body:has(.job-hero) main > section {
-
-        padding-top: 62px !important;
-
-        padding-bottom: 62px !important;
-    }
-
     body:has(.job-hero) h2 {
 
         font-size: 31px !important;
@@ -1998,12 +1960,7 @@ table {
         line-height: 1.1 !important;
     }
 
-    body:has(.job-hero) h3 {
-
-        font-size: 18px !important;
-    }
-
-    body:has(.job-hero) p {
+    body:has(.job-hero) main > section p {
 
         font-size: 14.5px !important;
 
@@ -2011,23 +1968,17 @@ table {
     }
 
     body:has(.job-hero)
-    section
+    main > section
     div[style*="background:#ffffff"] {
 
         padding: 22px !important;
     }
 
-    body:has(.job-hero)
-    div[style*="grid-template-columns:220px 1fr"] {
-
-        padding: 17px 0 !important;
-    }
 }
 
 
 /* =========================================================
    EXTRA SMALL DEVICES
-   360px AND BELOW
 ========================================================= */
 
 @media (max-width: 360px) {
@@ -2044,9 +1995,7 @@ table {
     }
 
 
-    /* Job */
-
-    body:has(.job-hero) .container {
+    .job-hero .container {
 
         width: calc(100% - 24px) !important;
     }
@@ -2061,15 +2010,8 @@ table {
         font-size: 29px !important;
     }
 
-    body:has(.job-hero) p {
+    body:has(.job-hero) main > section p {
 
         font-size: 14px !important;
-    }
-
-    body:has(.job-hero)
-    section
-    div[style*="background:#ffffff"] {
-
-        padding: 20px !important;
     }
 }

@@ -1,15 +1,14 @@
 /* =========================================================
    DAPPS PLATFORM
-   CAREERS / JOB DESCRIPTION
-   FINAL RESPONSIVE VERSION
+   CAREERS + JOB DESCRIPTION
+   FINAL RESPONSIVE CSS
 
    DESKTOP:
-   Existing desktop layout remains unchanged.
+   Existing desktop layout preserved.
 
    MOBILE:
-   True single-column reading experience.
-   All inline desktop grids are overridden.
-   No horizontal scrolling.
+   JOB DESCRIPTION PAGE = TRUE SINGLE COLUMN
+   NO HORIZONTAL OVERFLOW
 ========================================================= */
 
 
@@ -505,7 +504,6 @@ table {
     display: inline-flex;
 
     align-items: center;
-    justify-content: center;
 
     gap: 10px;
 
@@ -838,14 +836,20 @@ table {
 
 .job-hero .container {
     position: relative;
+
+    min-width: 0;
 }
 
 .job-hero h1 {
     max-width: 900px;
+
+    overflow-wrap: anywhere;
 }
 
 .job-hero p {
     max-width: 780px;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -856,19 +860,25 @@ table {
 .job-details,
 .employment-details {
     width: 100%;
+
+    min-width: 0;
 }
 
 .job-detail-row,
 .employment-detail-row {
     display: grid;
 
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns:
+        220px
+        minmax(0, 1fr);
 
     gap: 30px;
 
     padding: 22px 0;
 
     border-bottom: 1px solid #dfe4ea;
+
+    min-width: 0;
 }
 
 .job-detail-row strong,
@@ -879,6 +889,8 @@ table {
 .job-detail-row span,
 .employment-detail-row span {
     min-width: 0;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -897,11 +909,13 @@ table {
     }
 
     .foundation-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .benefits-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .careers-section-heading {
@@ -912,56 +926,31 @@ table {
 
 /* =========================================================
    MOBILE
-   TRUE SINGLE COLUMN
-   720px AND BELOW
+   CAREERS PAGE
 ========================================================= */
 
 @media (max-width: 720px) {
 
-    /* =====================================================
-       GLOBAL MOBILE
-    ===================================================== */
-
     html,
     body {
         width: 100%;
+
         max-width: 100%;
-        overflow-x: hidden !important;
+
+        overflow-x: hidden;
     }
 
-    body {
-        min-width: 0 !important;
-    }
-
-    .container,
     .careers-page .container,
-    .job-page .container {
-        width: calc(100% - 30px) !important;
+    .job-page .container,
+    .container {
+        width: calc(100% - 36px);
 
-        max-width: none !important;
+        max-width: none;
 
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
+        margin-left: auto;
+        margin-right: auto;
 
-    main,
-    section,
-    header,
-    footer {
-        max-width: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    li,
-    span,
-    a {
-        max-width: 100%;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
+        min-width: 0;
     }
 
 
@@ -991,7 +980,9 @@ table {
         width: 100%;
 
         padding-top: 110px;
-        padding-bottom: 55px;
+        padding-bottom: 65px;
+
+        min-width: 0;
     }
 
     .careers-eyebrow {
@@ -1012,6 +1003,8 @@ table {
         line-height: 1.03;
 
         letter-spacing: -0.04em;
+
+        overflow-wrap: anywhere;
     }
 
     .careers-hero p {
@@ -1032,8 +1025,14 @@ table {
         font-size: 12px;
     }
 
+    .careers-hero-meta span + span::before {
+        margin-right: 8px;
+    }
+
     .careers-primary-btn {
         width: 100%;
+
+        min-height: 50px;
     }
 
 
@@ -1042,24 +1041,23 @@ table {
     ===================================================== */
 
     .careers-intro {
-        padding: 70px 0;
+        padding: 76px 0;
     }
 
     .careers-two-column {
-        display: block !important;
-
-        grid-template-columns: none !important;
-
-        gap: 0 !important;
-    }
-
-    .careers-two-column > * {
-        width: 100% !important;
-        min-width: 0 !important;
+        display: block;
     }
 
     .careers-two-column > * + * {
         margin-top: 35px;
+    }
+
+    .careers-label {
+        margin-bottom: 15px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.15em;
     }
 
     .careers-intro h2,
@@ -1067,19 +1065,25 @@ table {
     .careers-executive-heading h2,
     .careers-benefits-heading h2,
     .careers-work h2 {
-        font-size: 34px;
+        font-size: 36px;
 
         line-height: 1.08;
 
         letter-spacing: -0.035em;
+
+        overflow-wrap: anywhere;
     }
 
     .careers-intro-copy {
         max-width: none;
 
-        font-size: 15px;
+        font-size: 15.5px;
 
         line-height: 1.8;
+    }
+
+    .careers-intro-copy p + p {
+        margin-top: 20px;
     }
 
 
@@ -1088,7 +1092,7 @@ table {
     ===================================================== */
 
     .careers-foundation {
-        padding: 70px 0 75px;
+        padding: 76px 0 80px;
     }
 
     .careers-section-heading {
@@ -1103,12 +1107,12 @@ table {
         margin-top: 18px;
 
         font-size: 14px;
+
+        line-height: 1.75;
     }
 
     .foundation-grid {
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
 
         border-left: 0;
     }
@@ -1116,13 +1120,21 @@ table {
     .foundation-card {
         min-height: 0;
 
-        padding: 27px 22px;
+        padding: 27px 24px;
 
         border-left: 1px solid var(--careers-line);
     }
 
     .foundation-number {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
+    }
+
+    .foundation-card h3 {
+        font-size: 21px;
+    }
+
+    .foundation-card p {
+        font-size: 14px;
     }
 
 
@@ -1131,56 +1143,72 @@ table {
     ===================================================== */
 
     .careers-positions {
-        padding: 72px 0 78px;
+        padding: 78px 0 85px;
     }
 
     .career-job-card {
-        display: block !important;
-
-        grid-template-columns: none !important;
-
-        gap: 0 !important;
+        display: block;
 
         padding: 30px 0;
     }
 
     .career-job-card:hover {
         padding-left: 0;
-
         padding-right: 0;
-
-        background: transparent;
     }
 
-    .career-job-main {
-        width: 100% !important;
-        min-width: 0 !important;
+    .career-job-category {
+        margin-bottom: 10px;
+
+        font-size: 9px;
     }
 
     .career-job-main h3 {
-        font-size: 25px;
+        margin-bottom: 13px;
 
-        line-height: 1.2;
+        font-size: 26px;
+
+        line-height: 1.18;
     }
 
     .career-job-main > p {
-        max-width: none;
+        margin-bottom: 17px;
 
         font-size: 14px;
 
         line-height: 1.75;
     }
 
-    .career-job-action {
-        width: 100%;
+    .career-job-meta {
+        gap: 7px 15px;
 
+        margin-bottom: 17px;
+
+        font-size: 11px;
+    }
+
+    .career-job-highlights {
+        gap: 6px;
+    }
+
+    .career-job-highlights span {
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+
+    .career-job-action {
         margin-top: 24px;
+
+        align-self: auto;
     }
 
     .careers-outline-btn {
         width: 100%;
 
         justify-content: center;
+
+        min-height: 48px;
     }
 
 
@@ -1189,30 +1217,27 @@ table {
     ===================================================== */
 
     .careers-executive {
-        padding: 75px 0;
+        padding: 80px 0;
     }
 
     .careers-executive-grid {
-        display: block !important;
-
-        grid-template-columns: none !important;
-
-        gap: 0 !important;
-    }
-
-    .careers-executive-grid > * {
-        width: 100% !important;
-        min-width: 0 !important;
+        display: block;
     }
 
     .careers-executive-grid > * + * {
         margin-top: 38px;
     }
 
-    .executive-grid {
-        display: grid !important;
+    .careers-executive-heading p {
+        max-width: none;
 
-        grid-template-columns: 1fr !important;
+        margin-top: 18px;
+
+        font-size: 14px;
+    }
+
+    .executive-grid {
+        grid-template-columns: 1fr;
 
         border-left: 0;
     }
@@ -1220,9 +1245,17 @@ table {
     .executive-card {
         min-height: 0;
 
-        padding: 27px 22px;
+        padding: 27px 24px;
 
         border-left: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .executive-card h3 {
+        font-size: 18px;
+    }
+
+    .executive-card p {
+        font-size: 14px;
     }
 
 
@@ -1231,17 +1264,23 @@ table {
     ===================================================== */
 
     .careers-benefits {
-        padding: 75px 0;
+        padding: 80px 0;
     }
 
     .careers-benefits-heading {
         margin-bottom: 38px;
     }
 
-    .benefits-grid {
-        display: grid !important;
+    .careers-benefits-heading p {
+        margin-top: 18px;
 
-        grid-template-columns: 1fr !important;
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
 
         gap: 1px;
     }
@@ -1249,7 +1288,15 @@ table {
     .benefit-card {
         min-height: 0;
 
-        padding: 27px 22px;
+        padding: 27px 24px;
+    }
+
+    .benefit-card h3 {
+        font-size: 18px;
+    }
+
+    .benefit-card p {
+        font-size: 14px;
     }
 
 
@@ -1258,30 +1305,33 @@ table {
     ===================================================== */
 
     .careers-work {
-        padding: 72px 0;
+        padding: 78px 0;
     }
 
     .careers-work-grid {
-        display: block !important;
-
-        grid-template-columns: none !important;
-
-        gap: 0 !important;
-    }
-
-    .careers-work-grid > * {
-        width: 100% !important;
-        min-width: 0 !important;
+        display: block;
     }
 
     .careers-work-grid > * + * {
         margin-top: 38px;
     }
 
-    .work-options {
-        display: grid !important;
+    .careers-work-copy > p {
+        font-size: 15px;
 
-        grid-template-columns: 1fr !important;
+        line-height: 1.8;
+    }
+
+    .work-options {
+        grid-template-columns: 1fr;
+
+        margin-top: 28px;
+    }
+
+    .work-options div {
+        padding: 17px;
+
+        font-size: 12px;
     }
 
 
@@ -1290,7 +1340,7 @@ table {
     ===================================================== */
 
     .careers-final {
-        min-height: 540px;
+        min-height: 550px;
 
         align-items: flex-end;
 
@@ -1300,19 +1350,23 @@ table {
     .careers-final-inner {
         width: 100%;
 
-        padding: 65px 0;
+        padding: 75px 0;
     }
 
     .careers-final h2 {
         max-width: none;
 
-        font-size: 39px;
+        margin-bottom: 18px;
+
+        font-size: 40px;
 
         line-height: 1.06;
     }
 
     .careers-final p {
         max-width: none;
+
+        margin-bottom: 28px;
 
         font-size: 16px;
 
@@ -1322,10 +1376,54 @@ table {
 
     /* =====================================================
        =====================================================
-       JOB DESCRIPTION PAGE
-       THIS IS THE IMPORTANT PART
+       JOB DESCRIPTION DETAIL PAGE
+       MOBILE ONLY
        =====================================================
        ===================================================== */
+
+    /*
+       THIS IS THE IMPORTANT PART.
+
+       The job detail HTML uses inline styles such as:
+
+       display:grid;
+       grid-template-columns:1fr 2fr;
+
+       display:grid;
+       grid-template-columns:repeat(2,1fr);
+
+       display:grid;
+       grid-template-columns:repeat(3,1fr);
+
+       display:grid;
+       grid-template-columns:220px 1fr;
+
+       Those inline styles are forcibly converted below.
+    */
+
+
+    /* -----------------------------------------------------
+       JOB PAGE GLOBAL WIDTH CONTROL
+    ----------------------------------------------------- */
+
+    body:has(.job-hero),
+    body:has(.job-hero) main,
+    body:has(.job-hero) section,
+    body:has(.job-hero) .container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        overflow-x: hidden;
+    }
+
+    body:has(.job-hero) *,
+    body:has(.job-hero) *::before,
+    body:has(.job-hero) *::after {
+        min-width: 0;
+
+        max-width: 100%;
+    }
 
 
     /* -----------------------------------------------------
@@ -1335,13 +1433,32 @@ table {
     .job-hero {
         width: 100% !important;
 
-        padding: 62px 0 52px !important;
+        padding: 72px 0 58px !important;
+
+        overflow: hidden !important;
     }
 
     .job-hero .container {
-        width: calc(100% - 30px) !important;
+        width: calc(100% - 36px) !important;
 
         max-width: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        padding: 0 !important;
+    }
+
+    .job-hero a {
+        display: inline-flex !important;
+
+        max-width: 100% !important;
+
+        margin-bottom: 28px !important;
+
+        font-size: 13px !important;
+
+        overflow-wrap: anywhere;
     }
 
     .job-hero h1 {
@@ -1353,11 +1470,17 @@ table {
 
         margin: 0 0 18px !important;
 
-        font-size: 40px !important;
+        padding: 0 !important;
+
+        font-size: 43px !important;
 
         line-height: 1.06 !important;
 
         letter-spacing: -0.035em !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: normal !important;
     }
 
     .job-hero p {
@@ -1369,10 +1492,19 @@ table {
 
         margin: 0 !important;
 
+        padding: 0 !important;
+
         font-size: 16px !important;
 
         line-height: 1.72 !important;
+
+        overflow-wrap: anywhere !important;
     }
+
+
+    /* -----------------------------------------------------
+       HERO META
+    ----------------------------------------------------- */
 
     .job-hero > .container > div:last-child {
         display: flex !important;
@@ -1383,12 +1515,20 @@ table {
 
         width: 100% !important;
 
+        max-width: 100% !important;
+
         gap: 8px !important;
 
         margin-top: 27px !important;
+
+        overflow: visible !important;
     }
 
     .job-hero > .container > div:last-child span {
+        display: inline-block !important;
+
+        width: auto !important;
+
         max-width: 100% !important;
 
         padding: 8px 11px !important;
@@ -1396,11 +1536,15 @@ table {
         font-size: 11px !important;
 
         line-height: 1.3 !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: anywhere !important;
     }
 
 
     /* -----------------------------------------------------
-       JOB PAGE SECTIONS
+       EVERY JOB SECTION
     ----------------------------------------------------- */
 
     body:has(.job-hero) main > section {
@@ -1408,31 +1552,40 @@ table {
 
         max-width: 100% !important;
 
-        padding-top: 65px !important;
+        padding-top: 68px !important;
 
-        padding-bottom: 65px !important;
+        padding-bottom: 68px !important;
+
+        overflow: hidden !important;
     }
 
 
     /* -----------------------------------------------------
-       VERY IMPORTANT:
-       EVERY INLINE GRID ON JOB PAGE
-       BECOMES ONE COLUMN
+       CRITICAL:
+       MAIN TWO-COLUMN SECTION CONTAINERS
+       
+       This directly kills:
+       1fr 2fr
+       1fr 1fr
+       0.8fr 1.4fr
+       0.9fr 1.2fr
+       etc.
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section .container > div[style*="grid-template-columns"],
-    body:has(.job-hero) main section .container > div[style*="grid-template-columns:"],
-    body:has(.job-hero) main section .container div[style*="grid-template-columns"] {
+    body:has(.job-hero)
+    main > section
+    > .container
+    > div[style*="grid-template-columns"] {
 
         display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
 
         grid-template-columns: none !important;
 
         grid-template-rows: none !important;
-
-        grid-auto-columns: auto !important;
-
-        grid-auto-flow: initial !important;
 
         gap: 0 !important;
 
@@ -1440,20 +1593,25 @@ table {
 
         row-gap: 0 !important;
 
-        width: 100% !important;
+        margin-left: 0 !important;
 
-        max-width: 100% !important;
+        margin-right: 0 !important;
 
         min-width: 0 !important;
+
+        overflow: visible !important;
     }
 
 
     /* -----------------------------------------------------
-       DIRECT CHILDREN OF THE MAIN TWO-COLUMN BLOCK
-       STACK VERTICALLY
+       DIRECT CHILDREN OF TITLE/COPY LAYOUT
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section .container > div[style*="grid-template-columns"] > div {
+    body:has(.job-hero)
+    main > section
+    > .container
+    > div[style*="grid-template-columns"]
+    > div {
 
         display: block !important;
 
@@ -1466,72 +1624,50 @@ table {
         margin-left: 0 !important;
 
         margin-right: 0 !important;
+
+        overflow-wrap: anywhere !important;
     }
 
 
     /* -----------------------------------------------------
-       SPACE BETWEEN LEFT TITLE AND RIGHT CONTENT
+       SPACE BETWEEN TITLE AND BODY
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section .container > div[style*="grid-template-columns"] > div + div {
+    body:has(.job-hero)
+    main > section
+    > .container
+    > div[style*="grid-template-columns"]
+    > div + div {
 
         margin-top: 32px !important;
     }
 
 
     /* -----------------------------------------------------
-       SECTION TITLES
+       ALL INLINE GRIDS INSIDE JOB PAGE
+       
+       Any remaining inline grid becomes one column.
     ----------------------------------------------------- */
 
-    body:has(.job-hero) h2 {
-
-        width: 100% !important;
-
-        max-width: 100% !important;
-
-        margin-top: 0 !important;
-
-        margin-bottom: 22px !important;
-
-        font-size: 33px !important;
-
-        line-height: 1.1 !important;
-
-        letter-spacing: -0.035em !important;
-    }
-
-    body:has(.job-hero) h3 {
+    body:has(.job-hero)
+    main > section
+    div[style*="grid-template-columns"] {
 
         max-width: 100% !important;
 
-        font-size: 18px !important;
-
-        line-height: 1.3 !important;
-    }
-
-    body:has(.job-hero) p {
-
-        max-width: 100% !important;
-
-        font-size: 15px !important;
-
-        line-height: 1.78 !important;
-
-        overflow-wrap: break-word !important;
+        min-width: 0 !important;
     }
 
 
     /* -----------------------------------------------------
-       ALL CARD GRIDS
-       2 COLUMNS / 3 COLUMNS -> 1 COLUMN
+       RESPONSIBILITY / SUCCESS / BENEFIT CARD GRIDS
+       
+       Force actual grid containers to one column.
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section div[style*="repeat(2,1fr)"],
-    body:has(.job-hero) main section div[style*="repeat(2, 1fr)"],
-    body:has(.job-hero) main section div[style*="repeat(3,1fr)"],
-    body:has(.job-hero) main section div[style*="repeat(3, 1fr)"],
-    body:has(.job-hero) main section div[style*="repeat(2,minmax"],
-    body:has(.job-hero) main section div[style*="repeat(3,minmax"] {
+    body:has(.job-hero)
+    main > section
+    div[style*="grid-template-columns:repeat"] {
 
         display: grid !important;
 
@@ -1543,17 +1679,38 @@ table {
 
         max-width: 100% !important;
 
-        min-width: 0 !important;
+        gap: 18px !important;
 
-        gap: 16px !important;
+        min-width: 0 !important;
+    }
+
+    body:has(.job-hero)
+    main > section
+    div[style*="grid-template-columns: repeat"] {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        grid-template-rows: none !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        gap: 18px !important;
+
+        min-width: 0 !important;
     }
 
 
     /* -----------------------------------------------------
-       JOB CARDS
+       CARDS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section div[style*="background:#ffffff"] {
+    body:has(.job-hero)
+    main > section
+    div[style*="background:#ffffff"] {
 
         width: 100% !important;
 
@@ -1561,13 +1718,100 @@ table {
 
         min-width: 0 !important;
 
-        padding: 24px !important;
+        padding: 25px !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* -----------------------------------------------------
+       JOB H2
+    ----------------------------------------------------- */
+
+    body:has(.job-hero) h2 {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: 34px !important;
+
+        line-height: 1.1 !important;
+
+        letter-spacing: -0.035em !important;
+
+        margin-top: 0 !important;
+
+        margin-bottom: 20px !important;
+
+        overflow-wrap: anywhere !important;
+    }
+
+
+    /* -----------------------------------------------------
+       JOB H3
+    ----------------------------------------------------- */
+
+    body:has(.job-hero) h3 {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: 18px !important;
+
+        line-height: 1.3 !important;
+
+        margin-top: 0 !important;
+
+        overflow-wrap: anywhere !important;
+    }
+
+
+    /* -----------------------------------------------------
+       JOB PARAGRAPHS
+    ----------------------------------------------------- */
+
+    body:has(.job-hero) p {
+
+        max-width: 100% !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: normal !important;
+
+        font-size: 15px !important;
+
+        line-height: 1.78 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CARD PARAGRAPHS
+    ----------------------------------------------------- */
+
+    body:has(.job-hero)
+    main > section
+    div[style*="background:#ffffff"] p {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
 
         margin-left: 0 !important;
 
         margin-right: 0 !important;
 
-        overflow-wrap: break-word !important;
+        overflow-wrap: anywhere !important;
+
+        font-size: 14px !important;
+
+        line-height: 1.75 !important;
     }
 
 
@@ -1577,6 +1821,8 @@ table {
 
     body:has(.job-hero) ul {
 
+        display: block !important;
+
         width: 100% !important;
 
         max-width: 100% !important;
@@ -1584,64 +1830,79 @@ table {
         margin: 0 !important;
 
         padding-left: 20px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: visible !important;
     }
 
     body:has(.job-hero) li {
 
         max-width: 100% !important;
 
-        margin-bottom: 13px !important;
+        margin-bottom: 13px;
 
         font-size: 14px !important;
 
         line-height: 1.7 !important;
 
-        overflow-wrap: break-word !important;
+        overflow-wrap: anywhere !important;
     }
 
 
     /* -----------------------------------------------------
        EMPLOYMENT DETAILS
-       220px | CONTENT
-       becomes
-       LABEL
-       CONTENT
+       
+       Desktop:
+       Label | Value
+
+       Mobile:
+       Label
+       Value
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section div[style*="grid-template-columns:220px 1fr"],
-    body:has(.job-hero) main section div[style*="grid-template-columns: 220px 1fr"] {
+    body:has(.job-hero)
+    div[style*="grid-template-columns:220px 1fr"] {
 
         display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
 
         grid-template-columns: none !important;
 
-        width: 100% !important;
+        grid-template-rows: none !important;
 
-        max-width: 100% !important;
+        gap: 0 !important;
 
-        min-width: 0 !important;
+        padding: 18px 0 !important;
 
-        padding: 19px 0 !important;
-
-        margin: 0 !important;
+        overflow: visible !important;
     }
 
-    body:has(.job-hero) main section div[style*="grid-template-columns:220px 1fr"] > strong,
-    body:has(.job-hero) main section div[style*="grid-template-columns: 220px 1fr"] > strong {
+    body:has(.job-hero)
+    div[style*="grid-template-columns:220px 1fr"]
+    strong {
 
         display: block !important;
 
         width: 100% !important;
+
+        max-width: 100% !important;
 
         margin: 0 0 7px !important;
 
-        font-size: 14px !important;
+        padding: 0 !important;
 
-        line-height: 1.4 !important;
+        overflow-wrap: anywhere !important;
     }
 
-    body:has(.job-hero) main section div[style*="grid-template-columns:220px 1fr"] > span,
-    body:has(.job-hero) main section div[style*="grid-template-columns: 220px 1fr"] > span {
+    body:has(.job-hero)
+    div[style*="grid-template-columns:220px 1fr"]
+    span {
 
         display: block !important;
 
@@ -1650,35 +1911,66 @@ table {
         max-width: 100% !important;
 
         min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
 
         font-size: 14px !important;
 
         line-height: 1.65 !important;
+
+        overflow-wrap: anywhere !important;
+
+        word-break: normal !important;
     }
 
 
     /* -----------------------------------------------------
-       PREVENT INLINE GRID CHILDREN FROM SHRINKING
+       ANY OTHER 220PX GRID
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section .container > div,
-    body:has(.job-hero) main section .container > div > div {
+    body:has(.job-hero)
+    div[style*="220px 1fr"] {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        grid-template-columns: none !important;
+
+        gap: 0 !important;
 
         min-width: 0 !important;
-
-        max-width: 100% !important;
     }
 
 
     /* -----------------------------------------------------
-       LINKS / BUTTONS
+       BUTTONS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main a {
+    body:has(.job-hero)
+    a[style*="background:#031431"] {
+
+        display: inline-flex !important;
+
+        width: 100% !important;
 
         max-width: 100% !important;
 
-        overflow-wrap: break-word !important;
+        justify-content: center !important;
+
+        align-items: center !important;
+
+        min-height: 50px !important;
+
+        padding: 14px 20px !important;
+
+        text-align: center !important;
+
+        overflow-wrap: anywhere !important;
     }
 
 
@@ -1686,29 +1978,31 @@ table {
        BACK TO CAREERS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main section:last-of-type a {
-
-        display: inline-flex !important;
-
-        align-items: center !important;
+    body:has(.job-hero)
+    section:last-of-type
+    a {
 
         max-width: 100% !important;
 
         font-size: 14px !important;
+
+        overflow-wrap: anywhere !important;
     }
 
 
     /* -----------------------------------------------------
-       FOOTER
+       JOB FOOTER
     ----------------------------------------------------- */
 
-    .footer {
-        width: 100%;
+    body:has(.job-hero) .footer {
 
-        max-width: 100%;
+        width: 100% !important;
 
-        overflow: hidden;
+        max-width: 100% !important;
+
+        overflow: hidden !important;
     }
+
 }
 
 
@@ -1719,14 +2013,22 @@ table {
 
 @media (max-width: 480px) {
 
-    .container,
     .careers-page .container,
-    .job-page .container {
-        width: calc(100% - 28px) !important;
+    .job-page .container,
+    .container {
+
+        width: calc(100% - 30px);
     }
+
+
+    /* CAREERS PAGE */
 
     .careers-hero {
         min-height: 600px;
+    }
+
+    .careers-hero-inner {
+        padding-bottom: 52px;
     }
 
     .careers-hero h1 {
@@ -1743,6 +2045,7 @@ table {
     .careers-executive,
     .careers-benefits,
     .careers-work {
+
         padding-top: 65px;
         padding-bottom: 68px;
     }
@@ -1752,6 +2055,7 @@ table {
     .careers-executive-heading h2,
     .careers-benefits-heading h2,
     .careers-work h2 {
+
         font-size: 32px;
     }
 
@@ -1760,610 +2064,94 @@ table {
     }
 
 
-    /* JOB PAGE */
+    /* =====================================================
+       JOB DESCRIPTION
+    ===================================================== */
 
     .job-hero {
-        padding: 58px 0 48px !important;
+
+        padding: 62px 0 50px !important;
+    }
+
+    .job-hero .container {
+
+        width: calc(100% - 30px) !important;
     }
 
     .job-hero h1 {
-        font-size: 37px !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: 38px !important;
 
         line-height: 1.07 !important;
     }
 
-    body:has(.job-hero) main > section {
-        padding-top: 58px !important;
-
-        padding-bottom: 58px !important;
-    }
-
     body:has(.job-hero) h2 {
-        font-size: 30px !important;
 
-        line-height: 1.1 !important;
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: 31px !important;
     }
 
-    body:has(.job-hero) main section div[style*="background:#ffffff"] {
-        padding: 21px !important;
+    body:has(.job-hero)
+    main > section
+    div[style*="background:#ffffff"] {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        padding: 22px !important;
     }
+
 }
 
 
 /* =========================================================
-   EXTRA SMALL
-   360px AND BELOW
+   EXTRA SMALL DEVICES
 ========================================================= */
 
 @media (max-width: 360px) {
 
-    .container,
     .careers-page .container,
-    .job-page .container {
-        width: calc(100% - 24px) !important;
+    .job-page .container,
+    .container {
+
+        width: calc(100% - 24px);
     }
 
     .careers-hero h1 {
         font-size: 38px;
     }
 
+
+    /* JOB DESCRIPTION */
+
+    .job-hero .container {
+
+        width: calc(100% - 24px) !important;
+    }
+
     .job-hero h1 {
-        font-size: 34px !important;
+
+        font-size: 35px !important;
     }
 
     body:has(.job-hero) h2 {
-        font-size: 28px !important;
+
+        font-size: 29px !important;
     }
 
-    body:has(.job-hero) main section div[style*="background:#ffffff"] {
-        padding: 19px !important;
-    }
-}
-/* =========================================================
-   DAPPS PLATFORM
-   JOB DESCRIPTION PAGE
-   MOBILE FINAL FIX
-
-   IMPORTANT:
-   - ONLY affects the individual job description page
-   - ONLY affects screens 720px and below
-   - DESKTOP LAYOUT IS NOT CHANGED
-   - MOBILE IS FORCED INTO A CLEAN SINGLE-COLUMN LAYOUT
-========================================================= */
-
-
-@media screen and (max-width: 720px) {
-
-
-    /* =====================================================
-       1. GLOBAL MOBILE SAFETY
-    ===================================================== */
-
-    html,
-    body {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
-
-    body:has(.job-hero) {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
-
-    body:has(.job-hero) *,
-    body:has(.job-hero) *::before,
-    body:has(.job-hero) *::after {
-        box-sizing: border-box !important;
-        max-width: 100%;
-    }
-
-
-    /* =====================================================
-       2. PAGE CONTAINER
-    ===================================================== */
-
-    body:has(.job-hero) .container {
-        width: calc(100% - 32px) !important;
-        max-width: none !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-
-    /* =====================================================
-       3. JOB HERO
-    ===================================================== */
-
-    body:has(.job-hero) .job-hero {
-        width: 100% !important;
-        padding: 65px 0 55px !important;
-        overflow: hidden !important;
-    }
-
-    body:has(.job-hero) .job-hero .container {
-        width: calc(100% - 32px) !important;
-        max-width: none !important;
-    }
-
-    body:has(.job-hero) .job-hero h1 {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 0 20px !important;
-
-        font-size: 40px !important;
-        line-height: 1.08 !important;
-        letter-spacing: -0.035em !important;
-
-        overflow-wrap: anywhere !important;
-        word-break: normal !important;
-    }
-
-    body:has(.job-hero) .job-hero p {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 0 !important;
-
-        font-size: 16px !important;
-        line-height: 1.75 !important;
-    }
-
-
-    /* =====================================================
-       4. HERO TAGS
-    ===================================================== */
-
-    body:has(.job-hero) .job-hero .container > div:last-child {
-        width: 100% !important;
-
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-
-        gap: 8px !important;
-        margin-top: 28px !important;
-    }
-
-    body:has(.job-hero) .job-hero .container > div:last-child span {
-        width: fit-content !important;
-        max-width: 100% !important;
-
-        padding: 8px 12px !important;
-
-        font-size: 11px !important;
-        line-height: 1.4 !important;
-
-        white-space: normal !important;
-    }
-
-
-    /* =====================================================
-       5. EVERY JOB SECTION
-       
-       The HTML uses inline:
-       display:grid;
-       grid-template-columns:...
-       
-       We deliberately override those inline layouts here.
-    ===================================================== */
-
-    body:has(.job-hero) main > section {
-        width: 100% !important;
-
-        padding-top: 65px !important;
-        padding-bottom: 65px !important;
-
-        overflow: hidden !important;
-    }
-
-
-    /* =====================================================
-       6. THE BIG FIX
-       
-       ALL FIRST-LEVEL CONTAINERS THAT WERE DESKTOP GRIDS
-       BECOME BLOCKS ON MOBILE.
-       
-       This is what stops:
-       
-       TITLE | TEXT
-       
-       from remaining side-by-side.
-    ===================================================== */
-
-    body:has(.job-hero) main > section .container > div[style*="display:grid"] {
-
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        grid-template-columns: none !important;
-        grid-template-rows: none !important;
-
-        gap: 0 !important;
-
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-
-    /* =====================================================
-       7. ALSO CATCH GRID ELEMENTS THAT DO NOT HAVE
-          display:grid IN THE INLINE STYLE
-    ===================================================== */
-
-    body:has(.job-hero) main > section .container > div[style*="grid-template-columns"] {
-
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        grid-template-columns: none !important;
-
-        gap: 0 !important;
-    }
-
-
-    /* =====================================================
-       8. TITLE COLUMN
-    ===================================================== */
-
-    body:has(.job-hero) main > section .container > div[style*="grid-template-columns"] > div:first-child {
-
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-
-        margin: 0 !important;
-    }
-
-
-    /* =====================================================
-       9. BODY CONTENT COLUMN
-       
-       THIS IS THE IMPORTANT PART.
-       
-       Desktop:
-       LEFT TITLE
-       RIGHT CONTENT
-       
-       Mobile:
-       TITLE
-       
-       CONTENT
-    ===================================================== */
-
-    body:has(.job-hero) main > section .container > div[style*="grid-template-columns"] > div:nth-child(2) {
-
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-
-        margin-top: 32px !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-
-    /* =====================================================
-       10. ALL JOB HEADINGS
-    ===================================================== */
-
-    body:has(.job-hero) h2 {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 0 0 22px !important;
-
-        font-size: 34px !important;
-        line-height: 1.1 !important;
-        letter-spacing: -0.035em !important;
-
-        overflow-wrap: anywhere !important;
-    }
-
-    body:has(.job-hero) h3 {
-        max-width: 100% !important;
-
-        margin: 0 0 13px !important;
-
-        font-size: 19px !important;
-        line-height: 1.3 !important;
-    }
-
-
-    /* =====================================================
-       11. NORMAL BODY TEXT
-    ===================================================== */
-
-    body:has(.job-hero) p {
-        max-width: 100% !important;
-
-        font-size: 15px !important;
-        line-height: 1.8 !important;
-
-        overflow-wrap: anywhere !important;
-    }
-
-
-    /* =====================================================
-       12. ALL INLINE GRID CARDS
-       
-       Examples:
-       repeat(2,1fr)
-       repeat(3,1fr)
-       repeat(2, 1fr)
-       repeat(3, 1fr)
-    ===================================================== */
-
-    body:has(.job-hero) main > section div[style*="grid-template-columns:repeat"],
-    body:has(.job-hero) main > section div[style*="grid-template-columns: repeat"] {
-
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        grid-template-rows: none !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        gap: 16px !important;
-    }
-
-
-    /* =====================================================
-       13. RESPONSIBILITY / BENEFIT / SUCCESS CARDS
-       
-       Every card becomes a full-width block.
-    ===================================================== */
-
-    body:has(.job-hero) main > section div[style*="background:#ffffff"],
-    body:has(.job-hero) main > section div[style*="background: #ffffff"] {
-
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-
-        padding: 24px !important;
-
-        overflow: hidden !important;
-    }
-
-
-    /* =====================================================
-       14. CARD TEXT
-    ===================================================== */
-
-    body:has(.job-hero) main > section div[style*="background:#ffffff"] p,
-    body:has(.job-hero) main > section div[style*="background: #ffffff"] p {
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin-top: 0 !important;
-
-        font-size: 14px !important;
-        line-height: 1.75 !important;
-    }
-
-
-    /* =====================================================
-       15. QUALIFICATIONS
-    ===================================================== */
-
-    body:has(.job-hero) ul {
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 0 !important;
-        padding-left: 20px !important;
-    }
-
-    body:has(.job-hero) li {
-
-        width: auto !important;
-        max-width: 100% !important;
-
-        margin-bottom: 14px !important;
-
-        font-size: 14px !important;
-        line-height: 1.7 !important;
-
-        overflow-wrap: anywhere !important;
-    }
-
-
-    /* =====================================================
-       16. EMPLOYMENT DETAILS
-       
-       Desktop:
-       LABEL | VALUE
-       
-       Mobile:
-       LABEL
-       VALUE
-    ===================================================== */
-
-    body:has(.job-hero) div[style*="grid-template-columns:220px 1fr"],
-    body:has(.job-hero) div[style*="grid-template-columns: 220px 1fr"] {
-
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        grid-template-columns: none !important;
-
-        gap: 0 !important;
-
-        padding: 18px 0 !important;
-    }
-
-    body:has(.job-hero) div[style*="grid-template-columns:220px 1fr"] strong,
-    body:has(.job-hero) div[style*="grid-template-columns: 220px 1fr"] strong {
-
-        display: block !important;
-
-        width: 100% !important;
-
-        margin: 0 0 7px !important;
-    }
-
-    body:has(.job-hero) div[style*="grid-template-columns:220px 1fr"] span,
-    body:has(.job-hero) div[style*="grid-template-columns: 220px 1fr"] span {
-
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        font-size: 14px !important;
-        line-height: 1.7 !important;
-    }
-
-
-    /* =====================================================
-       17. GENERAL INLINE GRID SAFETY
-       
-       Catches any remaining desktop grid inside job page.
-    ===================================================== */
-
-    body:has(.job-hero) main > section [style*="display:grid"],
-    body:has(.job-hero) main > section [style*="display: grid"] {
-
-        max-width: 100% !important;
-    }
-
-
-    /* =====================================================
-       18. PREVENT FIXED DESKTOP WIDTHS
-    ===================================================== */
-
-    body:has(.job-hero) main > section [style*="width:1100px"],
-    body:has(.job-hero) main > section [style*="width: 1100px"],
-    body:has(.job-hero) main > section [style*="max-width:1100px"],
-    body:has(.job-hero) main > section [style*="max-width: 1100px"] {
-
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-
-    /* =====================================================
-       19. LINKS / BUTTONS
-    ===================================================== */
-
-    body:has(.job-hero) main > section a {
-
-        max-width: 100% !important;
-
-        overflow-wrap: anywhere !important;
-    }
-
-
-    /* =====================================================
-       20. BACK TO CAREERS
-    ===================================================== */
-
-    body:has(.job-hero) main > section:last-of-type {
-
-        padding-top: 45px !important;
-        padding-bottom: 45px !important;
-    }
-
-
-    /* =====================================================
-       21. FOOTER
-    ===================================================== */
-
-    body:has(.job-hero) footer {
-
-        width: 100% !important;
-
-        overflow: hidden !important;
-    }
-
-
-    /* =====================================================
-       22. SMALLER PHONES
-    ===================================================== */
-
-    @media screen and (max-width: 480px) {
-
-        body:has(.job-hero) .container {
-
-            width: calc(100% - 28px) !important;
-        }
-
-        body:has(.job-hero) .job-hero {
-
-            padding: 58px 0 48px !important;
-        }
-
-        body:has(.job-hero) .job-hero h1 {
-
-            font-size: 36px !important;
-            line-height: 1.08 !important;
-        }
-
-        body:has(.job-hero) .job-hero p {
-
-            font-size: 15px !important;
-        }
-
-        body:has(.job-hero) main > section {
-
-            padding-top: 58px !important;
-            padding-bottom: 58px !important;
-        }
-
-        body:has(.job-hero) h2 {
-
-            font-size: 31px !important;
-        }
-
-        body:has(.job-hero) h3 {
-
-            font-size: 18px !important;
-        }
-
-        body:has(.job-hero) main > section div[style*="background:#ffffff"],
-        body:has(.job-hero) main > section div[style*="background: #ffffff"] {
-
-            padding: 21px !important;
-        }
-    }
-
-
-    /* =====================================================
-       23. VERY SMALL PHONES
-    ===================================================== */
-
-    @media screen and (max-width: 360px) {
-
-        body:has(.job-hero) .container {
-
-            width: calc(100% - 24px) !important;
-        }
-
-        body:has(.job-hero) .job-hero h1 {
-
-            font-size: 34px !important;
-        }
-
-        body:has(.job-hero) h2 {
-
-            font-size: 29px !important;
-        }
+    body:has(.job-hero)
+    main > section
+    div[style*="background:#ffffff"] {
+
+        padding: 20px !important;
     }
 
 }

@@ -38,7 +38,8 @@ if(!reduceMotion&&'IntersectionObserver' in window){
   '.foundation-card',
   '.career-job-card',
   '.executive-card',
-  '.benefit-card'
+  '.benefit-card',
+  '.intelligence-card'
  ].join(','));
  const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{

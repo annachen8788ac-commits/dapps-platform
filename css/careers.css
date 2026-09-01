@@ -1425,6 +1425,16 @@ table {
         max-width: 100%;
     }
 
+    body:has(.job-hero)
+    main > section:not(.job-hero) > .container {
+        width: calc(100% - 44px) !important;
+
+        max-width: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
 
     /* -----------------------------------------------------
        JOB HERO
@@ -2073,7 +2083,9 @@ table {
         padding: 62px 0 50px !important;
     }
 
-    .job-hero .container {
+    .job-hero .container,
+    body:has(.job-hero)
+    main > section:not(.job-hero) > .container {
 
         width: calc(100% - 40px) !important;
     }
@@ -2132,7 +2144,9 @@ table {
 
     /* JOB DESCRIPTION */
 
-    .job-hero .container {
+    .job-hero .container,
+    body:has(.job-hero)
+    main > section:not(.job-hero) > .container {
 
         width: calc(100% - 32px) !important;
     }

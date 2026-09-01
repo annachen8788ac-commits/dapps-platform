@@ -1406,10 +1406,9 @@ table {
        JOB PAGE GLOBAL WIDTH CONTROL
     ----------------------------------------------------- */
 
-    body:has(.job-hero),
-    body:has(.job-hero) main,
-    body:has(.job-hero) section,
-    body:has(.job-hero) .container {
+    .job-page,
+    .job-page main,
+    .job-page section {
         width: 100%;
         max-width: 100%;
         min-width: 0;
@@ -1417,15 +1416,15 @@ table {
         overflow-x: hidden;
     }
 
-    body:has(.job-hero) *,
-    body:has(.job-hero) *::before,
-    body:has(.job-hero) *::after {
+    .job-page *,
+    .job-page *::before,
+    .job-page *::after {
         min-width: 0;
 
         max-width: 100%;
     }
 
-    body:has(.job-hero)
+    .job-page
     main > section:not(.job-hero) > .container {
         width: calc(100% - 44px) !important;
 
@@ -1557,7 +1556,7 @@ table {
        EVERY JOB SECTION
     ----------------------------------------------------- */
 
-    body:has(.job-hero) main > section {
+    .job-page main > section {
         width: 100% !important;
 
         max-width: 100% !important;
@@ -1582,7 +1581,7 @@ table {
        etc.
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     > .container
     > div[style*="grid-template-columns"] {
@@ -1617,7 +1616,7 @@ table {
        DIRECT CHILDREN OF TITLE/COPY LAYOUT
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     > .container
     > div[style*="grid-template-columns"]
@@ -1643,7 +1642,7 @@ table {
        SPACE BETWEEN TITLE AND BODY
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     > .container
     > div[style*="grid-template-columns"]
@@ -1659,7 +1658,7 @@ table {
        Any remaining inline grid becomes one column.
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="grid-template-columns"] {
 
@@ -1675,7 +1674,7 @@ table {
        Force actual grid containers to one column.
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="grid-template-columns:repeat"] {
 
@@ -1694,7 +1693,7 @@ table {
         min-width: 0 !important;
     }
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="grid-template-columns: repeat"] {
 
@@ -1718,7 +1717,7 @@ table {
        CARDS
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="background:#ffffff"] {
 
@@ -1741,7 +1740,7 @@ table {
        JOB H2
     ----------------------------------------------------- */
 
-    body:has(.job-hero) h2 {
+    .job-page h2 {
 
         display: block !important;
 
@@ -1767,7 +1766,7 @@ table {
        JOB H3
     ----------------------------------------------------- */
 
-    body:has(.job-hero) h3 {
+    .job-page h3 {
 
         width: 100% !important;
 
@@ -1787,7 +1786,7 @@ table {
        JOB PARAGRAPHS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) p {
+    .job-page p {
 
         max-width: 100% !important;
 
@@ -1805,7 +1804,7 @@ table {
        CARD PARAGRAPHS
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="background:#ffffff"] p {
 
@@ -1829,7 +1828,7 @@ table {
        QUALIFICATIONS
     ----------------------------------------------------- */
 
-    body:has(.job-hero) ul {
+    .job-page ul {
 
         display: block !important;
 
@@ -1846,7 +1845,7 @@ table {
         overflow: visible !important;
     }
 
-    body:has(.job-hero) li {
+    .job-page li {
 
         max-width: 100% !important;
 
@@ -1871,7 +1870,7 @@ table {
        Value
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     div[style*="grid-template-columns:220px 1fr"] {
 
         display: block !important;
@@ -1893,7 +1892,7 @@ table {
         overflow: visible !important;
     }
 
-    body:has(.job-hero)
+    .job-page
     div[style*="grid-template-columns:220px 1fr"]
     strong {
 
@@ -1910,7 +1909,7 @@ table {
         overflow-wrap: anywhere !important;
     }
 
-    body:has(.job-hero)
+    .job-page
     div[style*="grid-template-columns:220px 1fr"]
     span {
 
@@ -1940,7 +1939,7 @@ table {
        ANY OTHER 220PX GRID
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     div[style*="220px 1fr"] {
 
         display: block !important;
@@ -1961,7 +1960,7 @@ table {
        BUTTONS
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     a[style*="background:#031431"] {
 
         display: inline-flex !important;
@@ -1988,7 +1987,7 @@ table {
        BACK TO CAREERS
     ----------------------------------------------------- */
 
-    body:has(.job-hero)
+    .job-page
     section:last-of-type
     a {
 
@@ -2004,7 +2003,7 @@ table {
        JOB FOOTER
     ----------------------------------------------------- */
 
-    body:has(.job-hero) .footer {
+    .job-page .footer {
 
         width: 100% !important;
 
@@ -2084,7 +2083,7 @@ table {
     }
 
     .job-hero .container,
-    body:has(.job-hero)
+    .job-page
     main > section:not(.job-hero) > .container {
 
         width: calc(100% - 40px) !important;
@@ -2101,7 +2100,7 @@ table {
         line-height: 1.07 !important;
     }
 
-    body:has(.job-hero) h2 {
+    .job-page h2 {
 
         width: 100% !important;
 
@@ -2110,7 +2109,7 @@ table {
         font-size: 31px !important;
     }
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="background:#ffffff"] {
 
@@ -2145,7 +2144,7 @@ table {
     /* JOB DESCRIPTION */
 
     .job-hero .container,
-    body:has(.job-hero)
+    .job-page
     main > section:not(.job-hero) > .container {
 
         width: calc(100% - 32px) !important;
@@ -2156,12 +2155,12 @@ table {
         font-size: 35px !important;
     }
 
-    body:has(.job-hero) h2 {
+    .job-page h2 {
 
         font-size: 29px !important;
     }
 
-    body:has(.job-hero)
+    .job-page
     main > section
     div[style*="background:#ffffff"] {
 

@@ -2043,6 +2043,104 @@ button{
 
 
 /* =========================================================
+   REFINED MOTION
+========================================================= */
+
+@keyframes hero-breathe{
+  from{background-position:center 58%}
+  to{background-position:center 54%}
+}
+
+@keyframes page-arrive{
+  from{opacity:.01;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(prefers-reduced-motion:no-preference){
+  main{
+    animation:page-arrive .48s cubic-bezier(.22,.61,.36,1) both;
+  }
+}
+
+@media(min-width:781px) and (prefers-reduced-motion:no-preference){
+  .hero{
+    animation:hero-breathe 18s ease-in-out infinite alternate;
+  }
+}
+
+.motion-ready .split-image,
+.motion-ready .image-strip-main,
+.motion-ready .image-strip-side,
+.motion-ready .image-strip-detail,
+.motion-ready .workspace,
+.motion-ready .feature,
+.motion-ready .card,
+.motion-ready .cap,
+.motion-ready .verification-card,
+.motion-ready .verification-link,
+.motion-ready .foundation-card,
+.motion-ready .career-job-card,
+.motion-ready .executive-card,
+.motion-ready .benefit-card{
+  opacity:0;
+  transform:translateY(22px);
+  transition:
+    opacity .85s cubic-bezier(.22,.61,.36,1),
+    transform .85s cubic-bezier(.22,.61,.36,1),
+    box-shadow .25s ease,
+    border-color .25s ease,
+    background .25s ease;
+}
+
+.motion-ready .is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .motion-ready .card.is-visible:hover,
+  .motion-ready .foundation-card.is-visible:hover,
+  .motion-ready .executive-card.is-visible:hover,
+  .motion-ready .benefit-card.is-visible:hover,
+  .motion-ready .verification-card.is-visible:hover,
+  .motion-ready .verification-link.is-visible:hover{
+    transform:translateY(-5px);
+  }
+}
+
+.motion-ready .image-strip-side{transition-delay:.10s}
+.motion-ready .image-strip-detail{transition-delay:.20s}
+
+@media(max-width:780px){
+  .motion-ready .split-image,
+  .motion-ready .image-strip-main,
+  .motion-ready .image-strip-side,
+  .motion-ready .image-strip-detail,
+  .motion-ready .workspace,
+  .motion-ready .feature,
+  .motion-ready .card,
+  .motion-ready .cap,
+  .motion-ready .verification-card,
+  .motion-ready .verification-link,
+  .motion-ready .foundation-card,
+  .motion-ready .career-job-card,
+  .motion-ready .executive-card,
+  .motion-ready .benefit-card{
+    transform:translateY(12px);
+    transition-duration:.55s;
+    transition-delay:0s;
+  }
+
+  .motion-ready .is-visible{transform:translateY(0)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero{animation:none !important}
+  .motion-ready *{opacity:1 !important;transform:none !important}
+}
+
+
+/* =========================================================
    SAFE MOBILE CONTENT HANDLING
 ========================================================= */
 

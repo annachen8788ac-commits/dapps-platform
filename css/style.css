@@ -2245,9 +2245,68 @@ button{
 }
 
 @media(max-width:620px){
-  .intelligence-grid{grid-template-columns:1fr}
-  .intelligence-card{min-height:230px}
-  .intelligence-card h3{margin-top:32px}
+  .intelligence-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .intelligence-card{
+    min-height:158px;
+    padding:18px 15px;
+  }
+
+  .intelligence-card:last-child{
+    grid-column:1/-1;
+    min-height:126px;
+  }
+
+  .intelligence-source{
+    font-size:9px;
+    letter-spacing:.1em;
+  }
+
+  .intelligence-card h3{
+    margin:20px 0 16px;
+    font-size:13px;
+    line-height:1.35;
+  }
+
+  .intelligence-card p{display:none}
+
+  .intelligence-action{
+    font-size:9px;
+    line-height:1.35;
+  }
+
+  .footer{
+    padding:36px 0 18px;
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px 16px;
+  }
+
+  .footer-brand{
+    grid-column:1/-1;
+  }
+
+  .footer-brand p{
+    max-width:330px;
+  }
+
+  .footer h4{
+    margin-bottom:9px;
+  }
+
+  .footer a,
+  .footer p{
+    margin:5px 0;
+  }
+
+  .copyright{
+    margin-top:24px;
+  }
 }
 
 .motion-ready .is-visible{

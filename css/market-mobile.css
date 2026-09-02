@@ -9,6 +9,7 @@
   .chart-toolbar{gap:8px;align-items:flex-start}
   .market-periods{flex-wrap:wrap}
   .market-pro-chart,.pro-native-canvas{touch-action:none!important}
+  .pro-chart-tooltip{display:none!important}
   .chart-footer{font-size:7.5px;line-height:1.45}
   .liquidity-grid{grid-template-columns:1fr 1fr!important}
   .liquidity-card{min-height:68px}

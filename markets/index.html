@@ -6,8 +6,10 @@
 <meta name="theme-color" content="#020b18">
 <meta name="robots" content="index,follow">
 <link rel="icon" type="image/png" href="/assets/signal-2026-08-31-18-10-57-373.png">
-<link rel="stylesheet" href="/css/style.css?v=20260901-mobile-footer1">
+<link rel="stylesheet" href="/css/style.css?v=20260902-market-clean1">
 <link rel="stylesheet" href="/css/market-intelligence.css?v=20260902-terminal1">
+<link rel="stylesheet" href="/css/market-chart-pro.css?v=20260902-pro4">
+<link rel="stylesheet" href="/css/market-stability.css?v=20260902-stable2">
 <title>Digital Asset Markets | DApps Platform</title>
 <meta name="description" content="Live digital asset market intelligence, order-book depth, price discovery and institutional market context from DApps Platform.">
 <link rel="canonical" href="https://dappsplatformusa.com/markets/">
@@ -27,8 +29,8 @@
 <div class="instrument-stat"><span>24H HIGH</span><b data-high>—</b></div><div class="instrument-stat"><span>24H LOW</span><b data-low>—</b></div><div class="instrument-stat"><span>24H VOLUME</span><b data-volume>—</b></div><div class="instrument-stat venue-stat"><span>VENUE</span><b data-venue>—</b></div>
 </div>
 <div class="chart-toolbar"><div class="market-periods" aria-label="Chart period"><button class="market-period" type="button" data-period="1H">1H</button><button class="market-period active" type="button" data-period="24H">24H</button><button class="market-period" type="button" data-period="7D">7D</button><button class="market-period" type="button" data-period="30D">30D</button></div><div class="chart-mode"><span class="chart-mode-dot"></span>LIVE CANDLES</div></div>
-<div class="chart-wrap"><canvas class="market-chart" data-chart aria-label="Live candlestick price chart"></canvas><div class="chart-crosshair" data-crosshair hidden><span data-crosshair-price></span></div></div>
-<div class="chart-footer"><span>OHLC data with live price updates</span><span data-candle-status>Waiting for venue snapshot</span></div>
+<div class="chart-wrap"><div class="market-pro-chart" data-pro-chart role="img" aria-label="Interactive live candlestick price chart"></div></div>
+<div class="chart-footer"><span>Interactive OHLC chart with live price updates</span><span data-candle-status>Waiting for venue snapshot</span></div>
 </section>
 <aside class="terminal-side">
 <section class="market-panel orderbook-panel"><div class="panel-head"><div><span class="panel-kicker">MARKET DEPTH</span><h2>Order Book</h2></div><span class="panel-live">LIVE</span></div><div class="book-head"><span>Price</span><span>Size</span><span>Total</span></div><div class="book-side asks" data-asks><div class="book-loading">Loading asks…</div></div><div class="book-spread"><span>SPREAD</span><b data-spread>—</b></div><div class="book-side bids" data-bids><div class="book-loading">Loading bids…</div></div></section>
@@ -45,7 +47,10 @@
 </section>
 </main>
 <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="/"><img src="/assets/dapps-platform-logo.png" alt="DApps Platform"></a><p>Building infrastructure for the next generation of digital finance.</p><p>U.S. operations in development in Los Angeles, California.</p></div><div><h4>Company</h4><a href="/about/">About Us</a><a href="/careers/">Careers</a><a href="/news/">News</a><a href="/contact/">Contact Us</a></div><div><h4>Platform</h4><a href="/wallet/">Digital Wallet</a><a href="/markets/">Digital Asset Markets</a><a href="/derivatives/">Derivatives</a><a href="/security/">Security</a></div><div><h4>Resources</h4><a href="/news/">Company Updates</a><a href="/contact/">Media Contact</a><a href="/compliance/">Compliance</a><a href="/trust-wallet/">Trust Wallet Context</a><a href="https://www.linkedin.com/company/dapps-platform-usa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div><div><h4>Legal</h4><a href="/terms/">Terms of Use</a><a href="/privacy/">Privacy Policy</a><a href="/compliance/">Compliance</a></div></div><div class="copyright"><span>© <span data-year>2026</span> DApps Platform. All rights reserved.</span><span>Website content is informational and subject to change as the company and platform develop.</span></div></div></footer>
-<script src="/js/site.js?v=20260901-motion4"></script>
-<script src="/js/market-intelligence.js?v=20260902-terminal5"></script>
+<script src="/js/site.js?v=20260902-market-clean1"></script>
+<script src="/js/market-intelligence.js?v=20260902-terminal6"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@5.2.1/dist/lightweight-charts.standalone.production.js"></script>
+<script src="/js/market-chart-pro.js?v=20260902-pro4"></script>
+<script src="/js/market-stability.js?v=20260902-stable2"></script>
 </body>
 </html>

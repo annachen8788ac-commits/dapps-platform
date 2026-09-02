@@ -7,9 +7,11 @@ on:
       - 'markets/**'
       - 'js/market-intelligence.js'
       - 'js/market-chart-pro.js'
+      - 'js/market-smooth-feed.js'
       - 'css/market-intelligence.css'
       - 'css/market-chart-pro.css'
       - 'css/market-stability.css'
+      - 'css/market-smooth-feed.css'
       - 'scripts/update-market-news.py'
       - 'data/market-news.json'
       - '.github/workflows/market-quality.yml'
@@ -37,6 +39,7 @@ jobs:
         run: |
           node --check js/market-intelligence.js
           node --check js/market-chart-pro.js
+          node --check js/market-smooth-feed.js
       - name: Check news updater syntax
         run: python -m py_compile scripts/update-market-news.py
       - name: Validate market page wiring
@@ -45,14 +48,19 @@ jobs:
           test -f css/market-intelligence.css
           test -f css/market-chart-pro.css
           test -f css/market-stability.css
+          test -f css/market-smooth-feed.css
           test -f js/market-intelligence.js
           test -f js/market-chart-pro.js
+          test -f js/market-smooth-feed.js
           test -f data/market-news.json
           grep -q 'data-market-status' markets/index.html
           grep -q 'data-asset-selector' markets/index.html
           grep -q 'data-pro-chart' markets/index.html
           ! grep -q '<canvas[^>]*data-chart' markets/index.html
           ! grep -q 'lightweight-charts' markets/index.html
+          grep -q 'LIVE K-LINE' markets/index.html
+          grep -q 'market-smooth-feed.js' markets/index.html
+          grep -q 'market-smooth-feed.css' markets/index.html
           grep -q 'data-market-news' markets/index.html
           grep -q 'data-venue' markets/index.html
           grep -q 'market-intelligence.js' markets/index.html

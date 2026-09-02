@@ -126,14 +126,15 @@ if(!reduceMotion&&'IntersectionObserver' in window){
  });
 })();
 
-/* Professional interactive chart layer for Digital Asset Markets. */
+/* Stable live-market layout. Keep the native single chart; do not inject a second chart. */
 (()=>{
  if(normalizePath(location.pathname)!=='/markets/')return;
- const loadScript=(src,id)=>new Promise((resolve,reject)=>{
-  if(document.getElementById(id))return resolve();
-  const s=document.createElement('script');s.id=id;s.src=src;s.async=true;s.onload=resolve;s.onerror=reject;document.head.appendChild(s);
- });
- loadScript('https://cdn.jsdelivr.net/npm/lightweight-charts@5.2.1/dist/lightweight-charts.standalone.production.js','lw-charts-lib')
-  .then(()=>loadScript('/js/market-chart-pro.js?v=20260902-pro1','market-chart-pro'))
-  .catch(()=>{});
+ const css=document.createElement('link');
+ css.rel='stylesheet';
+ css.href='/css/market-stability.css?v=20260902-stable1';
+ document.head.appendChild(css);
+ const s=document.createElement('script');
+ s.src='/js/market-stability.js?v=20260902-stable1';
+ s.defer=true;
+ document.body.appendChild(s);
 })();

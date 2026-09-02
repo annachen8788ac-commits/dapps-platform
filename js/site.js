@@ -131,10 +131,10 @@ if(!reduceMotion&&'IntersectionObserver' in window){
  if(normalizePath(location.pathname)!=='/markets/')return;
  const css=document.createElement('link');
  css.rel='stylesheet';
- css.href='/css/market-mobile.css?v=20260902-mobile7';
+ css.href='/css/market-mobile.css?v=20260902-mobile8';
  document.head.appendChild(css);
  const js=document.createElement('script');
- js.src='/js/market-mobile-chart.js?v=20260902-mobile7';
+ js.src='/js/market-mobile-chart.js?v=20260902-mobile8';
  js.defer=true;
  document.body.appendChild(js);
 })();

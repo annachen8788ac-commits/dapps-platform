@@ -8,6 +8,7 @@ on:
       - 'js/market-intelligence.js'
       - 'js/market-chart-pro.js'
       - 'js/market-smooth-feed.js'
+      - 'js/market-stability.js'
       - 'css/market-intelligence.css'
       - 'css/market-chart-pro.css'
       - 'css/market-stability.css'
@@ -40,6 +41,7 @@ jobs:
           node --check js/market-intelligence.js
           node --check js/market-chart-pro.js
           node --check js/market-smooth-feed.js
+          node --check js/market-stability.js
       - name: Check news updater syntax
         run: python -m py_compile scripts/update-market-news.py
       - name: Validate market page wiring
@@ -52,6 +54,7 @@ jobs:
           test -f js/market-intelligence.js
           test -f js/market-chart-pro.js
           test -f js/market-smooth-feed.js
+          test -f js/market-stability.js
           test -f data/market-news.json
           grep -q 'data-market-status' markets/index.html
           grep -q 'data-asset-selector' markets/index.html
@@ -67,6 +70,7 @@ jobs:
           grep -q 'market-chart-pro.js' markets/index.html
           grep -q 'market-intelligence.css' markets/index.html
           grep -q 'market-chart-pro.css' markets/index.html
+          grep -q 'market-stability.js' markets/index.html
           grep -q 'market-stability.css' markets/index.html
       - name: Validate news JSON
         run: |

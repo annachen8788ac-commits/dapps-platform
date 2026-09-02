@@ -1,0 +1,63 @@
+/* Executive-grade visual refinement — shared across the public site */
+:root{--exec-line:rgba(16,46,78,.11);--exec-shadow:0 22px 60px rgba(3,20,49,.10)}
+body{letter-spacing:-.003em}
+.site-header{transition:background .25s ease,border-color .25s ease}
+.nav{min-height:82px}
+.nav-links{font-weight:650;letter-spacing:.075em}
+.nav-links a{padding:8px 0}
+.hero h1,.page-hero h1,.careers-hero h1,.job-hero h1{font-weight:520;text-wrap:balance}
+.hero p,.page-hero p,.careers-hero p,.job-hero p{max-width:720px}
+.section-head h2,.careers-section-heading h2,.careers-intro h2,.careers-executive-heading h2,.careers-benefits-heading h2,.careers-work h2{text-wrap:balance}
+.btn,.careers-primary-btn,.careers-outline-btn{letter-spacing:.085em;box-shadow:none}
+.card,.foundation-card,.executive-card,.benefit-card,.career-job-card{will-change:transform}
+.card{border-color:rgba(71,174,255,.28);background:linear-gradient(145deg,#092b59,#061a39)}
+.card:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(0,0,0,.16)}
+.feature,.cap{position:relative}
+.footer{border-top:1px solid rgba(255,255,255,.08)}
+.footer h4{letter-spacing:.1em}
+.footer a{transition:opacity .18s ease,color .18s ease}
+.footer a:hover{opacity:1;color:#fff}
+
+/* Careers: more restrained, leadership-oriented presentation */
+.careers-hero-overlay{background:linear-gradient(90deg,rgba(3,20,49,.96) 0%,rgba(3,20,49,.84) 43%,rgba(3,20,49,.34) 100%)}
+.careers-hero h1{max-width:880px}
+.careers-hero p{font-size:19px;line-height:1.62}
+.careers-hero-meta{font-weight:560;letter-spacing:.02em}
+.career-job-card{position:relative}
+.career-job-card::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:2px;background:#168fe8;opacity:0;transition:opacity .2s ease}
+.career-job-card:hover::before{opacity:1}
+.career-job-category{letter-spacing:.18em}
+.career-job-main h3{font-weight:520}
+.career-job-highlights span{border:1px solid rgba(16,32,51,.07);background:#f7f9fc}
+.executive-card,.benefit-card{transition:background .22s ease}
+.executive-card:hover{background:rgba(255,255,255,.025)}
+.benefit-card:hover{background:#f9fbfd}
+
+/* Job pages: emphasize mandate, authority and scanability without changing content structure */
+.job-page .job-hero,.job-hero{isolation:isolate}
+.job-page h2{letter-spacing:-.035em;text-wrap:balance}
+.job-page p,.job-page li{line-height:1.78}
+.job-page .benefit-card,.job-page .executive-card{border-color:var(--exec-line)}
+
+/* Mobile: preserve hierarchy, reduce excessive vertical travel */
+@media(max-width:780px){
+ .nav{min-height:72px}.brand{transform:scale(.92);transform-origin:left center}
+ .hero h1,.careers-hero h1,.job-hero h1{letter-spacing:-.04em}
+ .section{padding-top:66px;padding-bottom:66px}
+ .careers-intro,.careers-foundation,.careers-positions,.careers-executive,.careers-benefits,.careers-work{padding-top:72px!important;padding-bottom:72px!important}
+ .career-job-card{padding-top:30px!important;padding-bottom:30px!important}
+ .career-job-card:hover{padding-left:0;padding-right:0}
+ .career-job-card::before{display:none}
+ .careers-hero p{font-size:17px}
+ .careers-hero-meta{gap:9px 16px}
+ .careers-hero-meta span+span::before{display:none}
+ .btn,.careers-primary-btn,.careers-outline-btn{min-height:48px}
+}
+@media(max-width:520px){
+ .hero-content{padding-bottom:72px}
+ .careers-hero{min-height:620px}
+ .careers-hero-inner{padding-bottom:64px}
+ .careers-hero h1{font-size:46px}
+ .careers-hero-meta{display:grid;grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.card,.foundation-card,.career-job-card,.btn,.careers-primary-btn{transition:none!important;transform:none!important}}

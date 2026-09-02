@@ -24,117 +24,19 @@ const year=document.querySelector('[data-year]'); if(year) year.textContent=new 
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduceMotion&&'IntersectionObserver' in window){
  document.documentElement.classList.add('motion-ready');
- const motionTargets=document.querySelectorAll([
-  '.split-image',
-  '.image-strip-main',
-  '.image-strip-side',
-  '.image-strip-detail',
-  '.workspace',
-  '.feature',
-  '.card',
-  '.cap',
-  '.verification-card',
-  '.verification-link',
-  '.foundation-card',
-  '.career-job-card',
-  '.executive-card',
-  '.benefit-card',
-  '.intelligence-card'
- ].join(','));
- const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-   if(entry.isIntersecting){
-    entry.target.classList.add('is-visible');
-    observer.unobserve(entry.target);
-   }
-  });
- },{threshold:.12,rootMargin:'0px 0px -6%'});
+ const motionTargets=document.querySelectorAll(['.split-image','.image-strip-main','.image-strip-side','.image-strip-detail','.workspace','.feature','.card','.cap','.verification-card','.verification-link','.foundation-card','.career-job-card','.executive-card','.benefit-card','.intelligence-card'].join(','));
+ const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});},{threshold:.12,rootMargin:'0px 0px -6%'});
  motionTargets.forEach(target=>observer.observe(target));
 }
 
-/* Global compact mobile footer. Desktop markup and presentation remain unchanged. */
 (()=>{
- const footerGrid=document.querySelector('.footer-grid');
- if(!footerGrid)return;
-
- const style=document.createElement('style');
- style.textContent=`
- .footer-accordion-toggle{display:none}
- .footer-accordion-panel{display:block}
- @media(max-width:780px){
-  .footer{padding:38px 0 18px}
-  .footer-grid{display:grid;grid-template-columns:1fr!important;gap:0!important}
-  .footer-brand{grid-column:1/-1!important;padding-bottom:20px}
-  .footer-brand p{max-width:360px;margin:5px 0}
-  .footer-accordion-group{border-top:1px solid rgba(255,255,255,.11)}
-  .footer-accordion-group:last-child{border-bottom:1px solid rgba(255,255,255,.11)}
-  .footer-accordion-group>h4{display:none}
-  .footer-accordion-toggle{display:flex;width:100%;min-height:50px;align-items:center;justify-content:space-between;gap:16px;padding:0;border:0;background:transparent;color:#fff;text-align:left;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
-  .footer-accordion-toggle::after{content:'+';font-size:21px;font-weight:300;line-height:1;color:#72d4ff;transition:transform .2s ease}
-  .footer-accordion-group.is-open .footer-accordion-toggle::after{content:'−'}
-  .footer-accordion-panel{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .25s ease}
-  .footer-accordion-panel-inner{min-height:0;overflow:hidden}
-  .footer-accordion-group.is-open .footer-accordion-panel{grid-template-rows:1fr}
-  .footer-accordion-panel-inner{padding:0 0 0}
-  .footer-accordion-group.is-open .footer-accordion-panel-inner{padding:0 0 15px}
-  .footer-accordion-panel a{margin:0!important;padding:7px 0;font-size:11px}
-  .copyright{margin-top:24px!important}
- }
- @media(prefers-reduced-motion:reduce){.footer-accordion-panel{transition:none!important}}
- `;
- document.head.appendChild(style);
-
- [...footerGrid.children].forEach((group,index)=>{
-  if(group.classList.contains('footer-brand'))return;
-  const heading=group.querySelector(':scope > h4');
-  if(!heading)return;
-
-  group.classList.add('footer-accordion-group');
-  const button=document.createElement('button');
-  const panel=document.createElement('div');
-  const inner=document.createElement('div');
-  const panelId=`footer-panel-${index}`;
-
-  button.type='button';
-  button.className='footer-accordion-toggle';
-  button.textContent=heading.textContent.trim();
-  button.setAttribute('aria-expanded','false');
-  button.setAttribute('aria-controls',panelId);
-  panel.className='footer-accordion-panel';
-  panel.id=panelId;
-  inner.className='footer-accordion-panel-inner';
-
-  [...group.children].forEach(node=>{
-   if(node!==heading)inner.appendChild(node);
-  });
-  panel.appendChild(inner);
-  heading.insertAdjacentElement('afterend',button);
-  group.appendChild(panel);
-
-  button.addEventListener('click',()=>{
-   const willOpen=!group.classList.contains('is-open');
-   footerGrid.querySelectorAll('.footer-accordion-group.is-open').forEach(openGroup=>{
-    if(openGroup!==group){
-     openGroup.classList.remove('is-open');
-     const openButton=openGroup.querySelector('.footer-accordion-toggle');
-     if(openButton)openButton.setAttribute('aria-expanded','false');
-    }
-   });
-   group.classList.toggle('is-open',willOpen);
-   button.setAttribute('aria-expanded',String(willOpen));
-  });
- });
+ const footerGrid=document.querySelector('.footer-grid');if(!footerGrid)return;
+ const style=document.createElement('style');style.textContent=`.footer-accordion-toggle{display:none}.footer-accordion-panel{display:block}@media(max-width:780px){.footer{padding:38px 0 18px}.footer-grid{display:grid;grid-template-columns:1fr!important;gap:0!important}.footer-brand{grid-column:1/-1!important;padding-bottom:20px}.footer-brand p{max-width:360px;margin:5px 0}.footer-accordion-group{border-top:1px solid rgba(255,255,255,.11)}.footer-accordion-group:last-child{border-bottom:1px solid rgba(255,255,255,.11)}.footer-accordion-group>h4{display:none}.footer-accordion-toggle{display:flex;width:100%;min-height:50px;align-items:center;justify-content:space-between;gap:16px;padding:0;border:0;background:transparent;color:#fff;text-align:left;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}.footer-accordion-toggle::after{content:'+';font-size:21px;font-weight:300;line-height:1;color:#72d4ff;transition:transform .2s ease}.footer-accordion-group.is-open .footer-accordion-toggle::after{content:'−'}.footer-accordion-panel{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .25s ease}.footer-accordion-panel-inner{min-height:0;overflow:hidden}.footer-accordion-group.is-open .footer-accordion-panel{grid-template-rows:1fr}.footer-accordion-panel-inner{padding:0}.footer-accordion-group.is-open .footer-accordion-panel-inner{padding:0 0 15px}.footer-accordion-panel a{margin:0!important;padding:7px 0;font-size:11px}.copyright{margin-top:24px!important}}@media(prefers-reduced-motion:reduce){.footer-accordion-panel{transition:none!important}}`;document.head.appendChild(style);
+ [...footerGrid.children].forEach((group,index)=>{if(group.classList.contains('footer-brand'))return;const heading=group.querySelector(':scope > h4');if(!heading)return;group.classList.add('footer-accordion-group');const button=document.createElement('button'),panel=document.createElement('div'),inner=document.createElement('div'),panelId=`footer-panel-${index}`;button.type='button';button.className='footer-accordion-toggle';button.textContent=heading.textContent.trim();button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',panelId);panel.className='footer-accordion-panel';panel.id=panelId;inner.className='footer-accordion-panel-inner';[...group.children].forEach(node=>{if(node!==heading)inner.appendChild(node)});panel.appendChild(inner);heading.insertAdjacentElement('afterend',button);group.appendChild(panel);button.addEventListener('click',()=>{const willOpen=!group.classList.contains('is-open');footerGrid.querySelectorAll('.footer-accordion-group.is-open').forEach(openGroup=>{if(openGroup!==group){openGroup.classList.remove('is-open');const openButton=openGroup.querySelector('.footer-accordion-toggle');if(openButton)openButton.setAttribute('aria-expanded','false')}});group.classList.toggle('is-open',willOpen);button.setAttribute('aria-expanded',String(willOpen));});});
 })();
 
-/* Markets mobile enhancements: keep desktop behavior untouched. */
 (()=>{
  if(normalizePath(location.pathname)!=='/markets/')return;
- const css=document.createElement('link');
- css.rel='stylesheet';
- css.href='/css/market-mobile.css?v=20260902-mobile9';
- document.head.appendChild(css);
- const js=document.createElement('script');
- js.src='/js/market-mobile-chart.js?v=20260902-mobile9';
- js.defer=true;
- document.body.appendChild(js);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='/css/market-mobile.css?v=20260902-mobile10';document.head.appendChild(css);
+ const js=document.createElement('script');js.src='/js/market-mobile-chart.js?v=20260902-mobile10';js.defer=true;document.body.appendChild(js);
 })();

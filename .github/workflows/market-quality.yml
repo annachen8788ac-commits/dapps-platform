@@ -1,0 +1,71 @@
+name: Market Intelligence Quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'markets/**'
+      - 'js/market-intelligence.js'
+      - 'css/market-intelligence.css'
+      - 'scripts/update-market-news.py'
+      - 'data/market-news.json'
+      - '.github/workflows/market-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: market-intelligence-quality
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check JavaScript syntax
+        run: node --check js/market-intelligence.js
+
+      - name: Check news updater syntax
+        run: python -m py_compile scripts/update-market-news.py
+
+      - name: Validate market page wiring
+        run: |
+          test -f markets/index.html
+          test -f css/market-intelligence.css
+          test -f js/market-intelligence.js
+          test -f data/market-news.json
+          grep -q 'data-market-status' markets/index.html
+          grep -q 'data-asset-selector' markets/index.html
+          grep -q 'data-chart' markets/index.html
+          grep -q 'data-market-news' markets/index.html
+          grep -q 'data-venue' markets/index.html
+          grep -q 'market-intelligence.js' markets/index.html
+          grep -q 'market-intelligence.css' markets/index.html
+
+      - name: Validate news JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/market-news.json')
+          d=json.loads(p.read_text())
+          assert isinstance(d.get('items'), list) and len(d['items']) >= 4
+          for item in d['items']:
+              for key in ('source','title','summary','url'):
+                  assert item.get(key), (key,item)
+          print('Market intelligence checks passed')
+          PY

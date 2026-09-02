@@ -1,0 +1,62 @@
+/* Strategic information architecture + responsive polish */
+
+.intelligence-gateway{padding:72px 0;background:#f6f9fd;border-top:1px solid #e4ebf3;border-bottom:1px solid #e4ebf3}
+.intelligence-gateway .gateway-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:26px}
+.intelligence-gateway .gateway-head h2{margin:8px 0 0;font-size:36px;line-height:1.16;letter-spacing:-.025em}
+.intelligence-gateway .gateway-head p{max-width:590px;margin:0;color:#617086;font-size:14px}
+.intelligence-gateway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.intelligence-gateway-card{position:relative;min-height:250px;padding:30px;border:1px solid #d8e3ef;border-radius:10px;background:#fff;box-shadow:0 14px 38px rgba(2,24,54,.07);overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.intelligence-gateway-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:#118cf3}
+.intelligence-gateway-card:hover{transform:translateY(-4px);border-color:#b9d9f7;box-shadow:0 20px 48px rgba(2,24,54,.11)}
+.intelligence-gateway-card .gateway-kicker{display:block;margin-bottom:16px;color:#118cf3;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.intelligence-gateway-card h3{margin:0 0 12px;font-size:24px;line-height:1.2}
+.intelligence-gateway-card p{margin:0 0 26px;color:#617086;font-size:13px;line-height:1.75}
+.intelligence-gateway-card .gateway-link{display:inline-flex;align-items:center;gap:8px;color:#087fd9;font-size:11px;font-weight:800;letter-spacing:.05em}
+
+.ecosystem-compact{padding:72px 0;background:#fff}
+.ecosystem-compact-inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.ecosystem-compact-copy h2{margin:8px 0 16px;font-size:36px;line-height:1.18;letter-spacing:-.025em}
+.ecosystem-compact-copy p{margin:0;color:#617086;font-size:14px;line-height:1.8}
+.ecosystem-compact-note{padding:26px 28px;border:1px solid #dce5ef;border-radius:10px;background:#f8fbfe;color:#4f6177;font-size:13px;line-height:1.75}
+.ecosystem-compact-note strong{display:block;margin-bottom:8px;color:#07182f;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.ecosystem-compact-note .btn{margin-top:20px}
+
+.insights-hero-tag{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#c8d8ea;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.insights-intro-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:50px;align-items:start}
+.insights-intro-grid h2{margin:8px 0 0;font-size:36px;line-height:1.2;letter-spacing:-.025em}
+.insights-tracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.insights-track{padding:24px;border:1px solid #dce5ef;border-radius:9px;background:#fff}
+.insights-track span{display:block;margin-bottom:10px;color:#118cf3;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.insights-track h3{margin:0 0 10px;font-size:19px}
+.insights-track p{margin:0;color:#617086;font-size:13px;line-height:1.7}
+.insights-market-cta{margin-top:24px;padding:24px 26px;border-radius:10px;background:#071b38;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.insights-market-cta p{margin:4px 0 0;color:#b8c9dc;font-size:12px}
+.insights-market-cta a{flex:0 0 auto;color:#55c8ff;font-size:11px;font-weight:800;letter-spacing:.05em}
+
+@media(max-width:900px){
+  .intelligence-gateway .gateway-head{display:block}
+  .intelligence-gateway .gateway-head p{margin-top:14px}
+  .ecosystem-compact-inner,.insights-intro-grid{grid-template-columns:1fr;gap:26px}
+}
+
+@media(max-width:780px){
+  .intelligence-gateway,.ecosystem-compact{padding:52px 0}
+  .intelligence-gateway .gateway-head h2,.ecosystem-compact-copy h2,.insights-intro-grid h2{font-size:30px}
+  .intelligence-gateway-grid,.insights-tracks{grid-template-columns:1fr}
+  .intelligence-gateway-card{min-height:0;padding:24px}
+  .ecosystem-compact-note{padding:22px}
+  .insights-market-cta{display:block;padding:22px}
+  .insights-market-cta a{display:inline-flex;margin-top:16px}
+  .footer-brand .brand{width:205px;height:66px}
+  .footer-brand .brand img{width:220px;height:76px}
+}
+
+@media(max-width:520px){
+  .intelligence-gateway,.ecosystem-compact{padding:44px 0}
+  .intelligence-gateway .gateway-head{margin-bottom:20px}
+  .intelligence-gateway .gateway-head h2,.ecosystem-compact-copy h2,.insights-intro-grid h2{font-size:27px}
+  .intelligence-gateway-card h3{font-size:21px}
+  .intelligence-gateway-card,.insights-track,.ecosystem-compact-note{border-radius:7px}
+  .insights-market-cta{border-radius:7px}
+  .page-hero p{font-size:14px}
+}

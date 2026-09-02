@@ -1,9 +1,61 @@
 {
-  "generated_at": "2026-09-02T00:00:00Z",
+  "generated_at": "2026-09-02T00:43:27.585416Z",
   "items": [
-    {"source":"U.S. SEC","date":"POLICY","title":"Digital Asset Regulation & Policy","summary":"Current U.S. Securities and Exchange Commission information relevant to crypto assets, market structure and investor protection.","url":"https://www.sec.gov/about/crypto-task-force/crypto-newsroom"},
-    {"source":"U.S. CFTC","date":"MARKETS","title":"Derivatives & Market Structure Updates","summary":"Current releases affecting derivatives, trading infrastructure, market integrity and digital assets.","url":"https://www.cftc.gov/PressRoom/PressReleases"},
-    {"source":"BIS","date":"INFRASTRUCTURE","title":"Tokenisation & Financial Infrastructure","summary":"Research and initiatives covering tokenisation, payments and next-generation financial-market infrastructure.","url":"https://www.bis.org/about/innovation-hub/overview.htm"},
-    {"source":"CISA","date":"SECURITY","title":"Cybersecurity Advisories","summary":"Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.","url":"https://www.cisa.gov/news-events/cybersecurity-advisories"}
+    {
+      "source": "CoinDesk",
+      "date": "Aug 26",
+      "title": "Bank of Japan explores tokenized central bank money as 2026 digital yen decision looms - CoinDesk",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZDdDcktVT3J0OU5CLW41U2ZOajZBTko2aXRiXzJ4Q011dFAwa0JtdGJqQ09rNjZRLW52SHlUSFJKTnZsYlRGOGQ1a1JWQTNDYnpKcEdkVmo5Wm56M25JcWlYVV83VHJ6MnFCUmVWckRucG5jWDFKUzdTX1JoQUFrdzU4enR1UEtURFlHZW9ab2ZXTnQ3ZWxCYUx6bXJBOXBqbnhJMS1EcktFSVNLc0NWREFPTjU1VkRNdlE?oc=5"
+    },
+    {
+      "source": "Cryptonews.net",
+      "date": "Sep 01",
+      "title": "Arthur D. Little Analyst Reveals Why the UAE Is Winning the Stablecoin Race - Cryptonews.net",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBhRHgxWUxTVm9MZjdINW14aDc2NDNSdnptYmw2Sy1pSzk3UzZwcnV6bGpKT05YVWZKblFhYzZHZUQwSG5pM1d2N2lEWHg3NXM2Z2xVU1JlamQ?oc=5"
+    },
+    {
+      "source": "TradingView",
+      "date": "Sep 01",
+      "title": "SEC Targets Blockchain Era With Transfer Agent Rule Overhaul As Wall Street Ramps Up Tokenization - TradingView",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQT3U3SkxucFBWNzQxQ1BTSmRKakpqZDZYaUVtaWJTekRva0QwTEI0QVdUT0JONDZTYWN0TlBoczZwNExPR3hiQ0tVejJUSDg3b3hFUUctSWtmRFNRWWtqSHpLSjJJdjZqa3BwLURTV3IxTVZoSDhETzl4Tm5vOVB6WUp6QWRQV0tYcTFDZE4yV0xVS3Q0NXhzdkQxM1J6cTVHU2stUnFWbGtqQ1Z6bHdaZWduV29lZHBQa3VxQVNxNXkwTmN3Zkh0RjJCUmFvU3JJLVp0MTJ5SHYzd1BSZFQ0RjBLTEw1V1dZTGN1OGNMdw?oc=5"
+    },
+    {
+      "source": "Markets Media",
+      "date": "Sep 01",
+      "title": "ICE, tZERO Collaborate on Tokenization Infrastructure - Markets Media",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPX3RYZ0phMGg4WjBlXzlCazhEQ2NrbUtFTUNvYk1TRExVeXhac2RlZWtzbXFGeklaeHM1Vk82Y2tscFkxODFTWWtWQXJnV21XRkliRXZzZ2NDck5SQ1poYVc3V3pMaFlVa0RiRkQwUF9NWEFWSGNIZVM2TGdwMExNcTcxenIxcFFDTHc?oc=5"
+    },
+    {
+      "source": "citybiz",
+      "date": "Sep 01",
+      "title": "Streamex Names Laura Kiernan Investor Relations Chief as Tokenization Strategy Advances - citybiz",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPVFNEdmI4SjBseXQ1OFkwZ2pqV0V4ZUNOeUxtcWJQblA5MEtxOFpsM1FEcVVBQ2l2eTBiSWMzSmg5azZob3hMTXpFWlhISVR3bkRDSVU5dXloeHVFMDl2c3FRVlVrRHlJMjVNYmxEaFRqOThncW8zMGFXRVRhRVA2bWcyQ0ZFbks1Tk8tLUQtdWlQcGM4MUQxSnVnczMxdndDZmZxVWw1RVctM3Y0bHdabVd3Z3ZadnlmUC1tcnd1dWViV1pT?oc=5"
+    },
+    {
+      "source": "TradingView",
+      "date": "Sep 01",
+      "title": "Theorem Launches Exchange Infrastructure Built for the Next Phase of Tokenized Asset Markets - TradingView",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNaGdENkU1Y0VqcV9kV2JsLVRna2gyTWRNcG02TWdvXzFNREdpUmVfOGx5WDhWMVNVSlJKMTlFTE9hV3pNMEZYSmtXZXNJR25iWWpORnR5MkFlaTM0Rm9NUUdoYmdoYVpWd2I4OUs3X191VkZyb0tvaGdHbllwM1JnLXJoUFBCb196OGc3Q0ZvczVWT2N4eDdUazlrZHZ2MEhuUmdmTHRZamQzbEpKbGdSUi1IUHJIOW1hME1MaGp2aXpVd25ubTAzM0VsRXVaSFd6MmFSQ2FVR0xDejVIR3NoRkVHVEdGOUU?oc=5"
+    },
+    {
+      "source": "Crypto News",
+      "date": "Sep 01",
+      "title": "London Stock Exchange partners with Kraken parent to tokenize UK stocks - Crypto News",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNd0pOTGUyOEctc0hRcUloZm9saDZ0Q0dzNlFnbWM2TlZUMUZWeWlQaE9zc0cxb3hHc09xZ2g1Wjh0cHJxWDJVdHc3Rmhmbl9tR1BnVHU2S2lxMnBTa19UZ0VXR1ctRk54WDJRNjBKLVJRNk1DaDFIMnY5cDJQVHJmX3pnNDZKWUxRbm51amFFQzQ3Sk81X3dJ?oc=5"
+    },
+    {
+      "source": "Gulf Business",
+      "date": "Sep 01",
+      "title": "Ripple, SettleMint partner on tokenised asset platform for banks - Gulf Business",
+      "summary": "Current reporting relevant to digital assets, institutional markets, regulation, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOYjFNSXZPd1pTX1BDcUR1UFlMU2hWejdFLUdRZW5RX3I4TVM4TTktS3ZzX3JzU0xEOVdHZ1R1eEQ3clFJZ1BuRms1UnZORExBcmotVEFBUExPVERuanR1WWN6RW9rbWIwck9uLThvNGFIaHhSczBCa2ZKbTlIY1RGNG1YdjUzZjRBOGhFWXk4VVBuRHJaTXlRV3lXTXFsNFpQRGtvZlRhZzQ?oc=5"
+    }
   ]
 }

@@ -6,7 +6,10 @@ on:
     paths:
       - 'markets/**'
       - 'js/market-intelligence.js'
+      - 'js/market-chart-pro.js'
       - 'css/market-intelligence.css'
+      - 'css/market-chart-pro.css'
+      - 'css/market-stability.css'
       - 'scripts/update-market-news.py'
       - 'data/market-news.json'
       - '.github/workflows/market-quality.yml'
@@ -37,7 +40,9 @@ jobs:
           python-version: '3.12'
 
       - name: Check JavaScript syntax
-        run: node --check js/market-intelligence.js
+        run: |
+          node --check js/market-intelligence.js
+          node --check js/market-chart-pro.js
 
       - name: Check news updater syntax
         run: python -m py_compile scripts/update-market-news.py
@@ -46,15 +51,23 @@ jobs:
         run: |
           test -f markets/index.html
           test -f css/market-intelligence.css
+          test -f css/market-chart-pro.css
+          test -f css/market-stability.css
           test -f js/market-intelligence.js
+          test -f js/market-chart-pro.js
           test -f data/market-news.json
           grep -q 'data-market-status' markets/index.html
           grep -q 'data-asset-selector' markets/index.html
-          grep -q 'data-chart' markets/index.html
+          grep -q 'data-pro-chart' markets/index.html
+          ! grep -q '<canvas[^>]*data-chart' markets/index.html
           grep -q 'data-market-news' markets/index.html
           grep -q 'data-venue' markets/index.html
           grep -q 'market-intelligence.js' markets/index.html
+          grep -q 'market-chart-pro.js' markets/index.html
+          grep -q 'lightweight-charts' markets/index.html
           grep -q 'market-intelligence.css' markets/index.html
+          grep -q 'market-chart-pro.css' markets/index.html
+          grep -q 'market-stability.css' markets/index.html
 
       - name: Validate news JSON
         run: |

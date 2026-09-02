@@ -125,16 +125,3 @@ if(!reduceMotion&&'IntersectionObserver' in window){
   });
  });
 })();
-
-/* Stable live-market layout. Keep the native single chart; do not inject a second chart. */
-(()=>{
- if(normalizePath(location.pathname)!=='/markets/')return;
- const css=document.createElement('link');
- css.rel='stylesheet';
- css.href='/css/market-stability.css?v=20260902-stable1';
- document.head.appendChild(css);
- const s=document.createElement('script');
- s.src='/js/market-stability.js?v=20260902-stable1';
- s.defer=true;
- document.body.appendChild(s);
-})();

@@ -1,4 +1,5 @@
 
+(()=>{const polish=document.createElement('link');polish.rel='stylesheet';polish.href='/css/executive-polish.css?v=20260902-exec1';document.head.appendChild(polish)})();
 const menu=document.querySelector('[data-menu]');
 const nav=document.querySelector('.nav-links');
 if(menu&&nav){menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',nav.classList.contains('open'));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));}

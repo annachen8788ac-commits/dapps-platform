@@ -1,55 +1,24 @@
 (()=>{
 'use strict';
 const $=(s,r=document)=>r.querySelector(s);
-const CADENCE=1000;
-const SWITCH_SETTLE=1600;
-const feeds=[
+const CADENCE=1000,SWITCH_SETTLE=1800,ROWS=10;
+const defs=[
  {selector:'[data-asks]',type:'book',loading:'SYNCING LIVE ASKS…'},
  {selector:'[data-bids]',type:'book',loading:'SYNCING LIVE BIDS…'},
  {selector:'[data-trades]',type:'trade',loading:'SYNCING LIVE TRADES…'}
 ];
+let generation=0;
 const states=[];
-let assetGeneration=0;
-function validHTML(source,type){const row=type==='book'?'.book-row':'.trade-row';return source.querySelector(row)?source.innerHTML:''}
-function buildMirror(cfg){
- const source=$(cfg.selector);if(!source)return;
- const mirror=document.createElement('div');mirror.className=source.className+' market-smooth-view';mirror.innerHTML=`<div class="book-loading market-syncing">${cfg.loading}</div>`;
- source.classList.add('market-smooth-source');source.setAttribute('aria-hidden','true');source.after(mirror);
- const st={...cfg,source,mirror,latest:'',rendered:'',generation:assetGeneration,acceptAfter:Date.now()+SWITCH_SETTLE,lastCapturedAt:0};
- const capture=()=>{const now=Date.now();if(now<st.acceptAfter)return;const html=validHTML(source,cfg.type);if(html){st.latest=html;st.lastCapturedAt=now;st.generation=assetGeneration}};
- new MutationObserver(capture).observe(source,{childList:true,subtree:true,characterData:true,attributes:true});
- states.push(st);
-}
-function buildPriceMirror(){
- const price=$('[data-price]'),change=$('[data-change]');if(!price||!change)return;
- const priceView=document.createElement('div');priceView.className='market-price market-smooth-price';price.after(priceView);
- const changeView=document.createElement('div');changeView.className='market-change market-smooth-change';change.after(changeView);
- price.classList.add('market-smooth-price-source');change.classList.add('market-smooth-price-source');
- const st={type:'price',price,change,priceView,changeView,latestPrice:'—',latestChange:'—',latestClass:'market-change',renderedPrice:'',renderedChange:'',generation:assetGeneration,acceptAfter:Date.now()+SWITCH_SETTLE};
- const capture=()=>{if(Date.now()<st.acceptAfter)return;st.latestPrice=price.textContent;st.latestChange=change.textContent;st.latestClass=change.className;st.generation=assetGeneration};
- new MutationObserver(capture).observe(price,{childList:true,subtree:true,characterData:true});new MutationObserver(capture).observe(change,{childList:true,subtree:true,characterData:true,attributes:true});states.push(st);
-}
-function resetForAsset(){
- assetGeneration++;const now=Date.now();
- for(const st of states){st.generation=assetGeneration;st.acceptAfter=now+SWITCH_SETTLE;
-  if(st.type==='price'){st.latestPrice='—';st.latestChange='—';st.renderedPrice='';st.renderedChange='';st.priceView.textContent='—';st.changeView.textContent='—';st.changeView.className='market-change market-smooth-change'}
-  else{st.latest='';st.rendered='';st.lastCapturedAt=0;st.mirror.innerHTML=`<div class="book-loading market-syncing">${st.loading}</div>`;st.mirror.classList.remove('market-smooth-step')}
- }
-}
-function tick(){
- const now=Date.now();
- for(const st of states){if(now<st.acceptAfter||st.generation!==assetGeneration)continue;
-  if(st.type==='price'){
-   if(st.latestPrice==='—'){st.latestPrice=st.price.textContent;st.latestChange=st.change.textContent;st.latestClass=st.change.className}
-   if(st.latestPrice===st.renderedPrice&&st.latestChange===st.renderedChange)continue;
-   st.priceView.textContent=st.latestPrice;st.changeView.textContent=st.latestChange;st.changeView.className=(st.latestClass||'market-change').replace('market-smooth-price-source','').trim()+' market-smooth-change';st.renderedPrice=st.latestPrice;st.renderedChange=st.latestChange;
-   continue;
-  }
-  if(!st.latest){const html=validHTML(st.source,st.type);if(html){st.latest=html;st.lastCapturedAt=now}}
-  if(!st.latest||st.latest===st.rendered)continue;
-  st.mirror.innerHTML=st.latest;st.rendered=st.latest;
- }
-}
-function boot(){buildPriceMirror();feeds.forEach(buildMirror);const symbol=$('[data-selected-symbol]');if(symbol)new MutationObserver(resetForAsset).observe(symbol,{childList:true,subtree:true,characterData:true});setInterval(tick,CADENCE)}
+function makeRow(type){const row=document.createElement('div');row.className=type==='book'?'book-row':'trade-row';row.innerHTML='<span>—</span><span>—</span><span>—</span>';row.classList.add('is-empty');return row}
+function makeView(source,cfg){const view=document.createElement('div');view.className=source.className+' market-smooth-view';for(let i=0;i<ROWS;i++)view.appendChild(makeRow(cfg.type));const veil=document.createElement('div');veil.className='market-switch-veil';veil.textContent=cfg.loading;view.appendChild(veil);source.classList.add('market-smooth-source');source.setAttribute('aria-hidden','true');source.after(view);return view}
+function sourceRows(st){return [...st.source.querySelectorAll(st.type==='book'?'.book-row':'.trade-row')].slice(0,ROWS)}
+function readSnapshot(st){return sourceRows(st).map(r=>({className:r.className,cells:[...r.querySelectorAll('span')].slice(0,3).map(x=>x.textContent||'—'),depth:r.style.getPropertyValue('--depth')||'0%'}))}
+function sameSnapshot(a,b){return JSON.stringify(a)===JSON.stringify(b)}
+function applySnapshot(st,snap,initial=false){const rows=[...st.view.querySelectorAll(st.type==='book'?'.book-row':'.trade-row')];rows.forEach((row,i)=>{const d=snap[i];if(!d){row.className=(st.type==='book'?'book-row':'trade-row')+' is-empty';row.style.setProperty('--depth','0%');[...row.children].slice(0,3).forEach(c=>c.textContent='—');return}const base=st.type==='book'?'book-row':'trade-row',dir=[...String(d.className||'').split(/\s+/)].filter(x=>x&&x!==base&&x!=='is-empty');row.className=[base,...dir].join(' ');if(st.type==='book')row.style.setProperty('--depth',d.depth||'0%');for(let j=0;j<3;j++){const cell=row.children[j],next=d.cells[j]||'—';if(cell.textContent!==next){cell.textContent=next;if(!initial){cell.classList.remove('market-cell-tick');requestAnimationFrame(()=>cell.classList.add('market-cell-tick'))}}}});st.rendered=snap}
+function mount(cfg){const source=$(cfg.selector);if(!source)return;const view=makeView(source,cfg);const st={...cfg,source,view,rendered:[],candidate:[],candidateSince:0,acceptAfter:Date.now()+SWITCH_SETTLE,generation,ready:false};const capture=()=>{if(Date.now()<st.acceptAfter)return;const snap=readSnapshot(st);if(!snap.length)return;if(sameSnapshot(snap,st.candidate))return;st.candidate=snap;st.candidateSince=Date.now()};new MutationObserver(capture).observe(source,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['style','class']});states.push(st)}
+function mountPrice(){const price=$('[data-price]'),change=$('[data-change]');if(!price||!change)return;const pv=document.createElement('div');pv.className='market-price market-smooth-price';pv.textContent='—';price.after(pv);const cv=document.createElement('div');cv.className='market-change market-smooth-change';cv.textContent='—';change.after(cv);price.classList.add('market-smooth-price-source');change.classList.add('market-smooth-price-source');const st={type:'price',price,change,pv,cv,acceptAfter:Date.now()+SWITCH_SETTLE,generation,lastPrice:'',lastChange:''};states.push(st)}
+function reset(){generation++;const now=Date.now();for(const st of states){st.generation=generation;st.acceptAfter=now+SWITCH_SETTLE;if(st.type==='price'){st.lastPrice='';st.lastChange='';st.pv.textContent='—';st.cv.textContent='—';st.cv.className='market-change market-smooth-change'}else{st.ready=false;st.rendered=[];st.candidate=[];st.candidateSince=0;st.view.classList.add('is-switching');st.view.querySelector('.market-switch-veil')?.classList.add('show');const rows=[...st.view.querySelectorAll('.book-row,.trade-row')];rows.forEach(r=>{r.classList.add('is-empty');r.style.setProperty('--depth','0%');[...r.children].slice(0,3).forEach(c=>c.textContent='—')})}}}
+function tick(){const now=Date.now();for(const st of states){if(st.generation!==generation||now<st.acceptAfter)continue;if(st.type==='price'){const p=st.price.textContent,c=st.change.textContent;if(p!==st.lastPrice){st.pv.textContent=p;st.lastPrice=p}if(c!==st.lastChange){st.cv.textContent=c;st.cv.className=(st.change.className||'market-change').replace('market-smooth-price-source','').trim()+' market-smooth-change';st.lastChange=c}continue}const snap=readSnapshot(st);if(!snap.length)continue;if(!st.ready){applySnapshot(st,snap,true);st.ready=true;st.view.classList.remove('is-switching');st.view.querySelector('.market-switch-veil')?.classList.remove('show');continue}if(sameSnapshot(snap,st.rendered))continue;applySnapshot(st,snap,false)}}
+function boot(){mountPrice();defs.forEach(mount);const symbol=$('[data-selected-symbol]');if(symbol)new MutationObserver(reset).observe(symbol,{childList:true,subtree:true,characterData:true});setInterval(tick,CADENCE)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();

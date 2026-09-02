@@ -10,6 +10,7 @@
   .market-periods{flex-wrap:wrap}
   .market-pro-chart,.pro-native-canvas{touch-action:none!important}
   .pro-chart-tooltip{display:none!important}
+  .market-pro-chart.mobile-inspect .pro-chart-tooltip.show{display:grid!important}
   .chart-footer{font-size:7.5px;line-height:1.45}
   .liquidity-grid{grid-template-columns:1fr 1fr!important}
   .liquidity-card{min-height:68px}
@@ -17,7 +18,7 @@
   .global-grid{grid-template-columns:1fr!important}
   .global-row{border-right:0!important;border-bottom:1px solid var(--market-line)!important}
   .global-row:last-child{border-bottom:0!important}
-  .market-pro-chart:after{content:'Pinch to zoom · Drag to pan';position:absolute;left:10px;bottom:8px;z-index:8;padding:4px 7px;border:1px solid rgba(126,163,199,.16);border-radius:999px;background:rgba(3,14,28,.72);color:#7894ad;font-size:7px;letter-spacing:.06em;pointer-events:none}
+  .market-pro-chart:after{content:'Pinch to zoom · Drag to pan · Hold for details';position:absolute;left:10px;bottom:8px;z-index:8;padding:4px 7px;border:1px solid rgba(126,163,199,.16);border-radius:999px;background:rgba(3,14,28,.72);color:#7894ad;font-size:7px;letter-spacing:.06em;pointer-events:none}
 }
 @media(max-width:420px){
   .instrument-bar{grid-template-columns:1fr!important}

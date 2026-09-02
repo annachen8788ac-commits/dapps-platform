@@ -3,27 +3,14 @@
 const $=(s,r=document)=>r.querySelector(s);
 const tracked=['[data-price]','[data-high]','[data-low]','[data-volume]','[data-vwap]','[data-spread]','[data-best-bid]','[data-best-ask]','[data-bid-depth]','[data-ask-depth]'];
 const last=new WeakMap();
-function pulse(el){
- if(!el)return;
- const txt=el.textContent.trim(),prev=last.get(el);
- if(prev===txt)return;
- last.set(el,txt);
- el.classList.remove('market-data-tick');
- requestAnimationFrame(()=>el.classList.add('market-data-tick'));
- if(el.matches('[data-price]')&&prev&&prev!=='—'){
-  const a=parseFloat(prev.replace(/[$,]/g,'')),b=parseFloat(txt.replace(/[$,]/g,''));
-  el.classList.remove('market-data-up','market-data-down');
-  if(isFinite(a)&&isFinite(b)&&a!==b){
-   el.classList.add(b>a?'market-data-up':'market-data-down');
-   clearTimeout(el._colorTimer);
-   el._colorTimer=setTimeout(()=>el.classList.remove('market-data-up','market-data-down'),160);
-  }
- }
-}
-function observeOne(el){
- if(!el)return;
- last.set(el,el.textContent.trim());
- new MutationObserver(()=>pulse(el)).observe(el,{childList:true,subtree:true,characterData:true});
-}
+function pulse(el){if(!el)return;const txt=el.textContent.trim(),prev=last.get(el);if(prev===txt)return;last.set(el,txt);el.classList.remove('market-data-tick');requestAnimationFrame(()=>el.classList.add('market-data-tick'));if(el.matches('[data-price]')&&prev&&prev!=='—'){const a=parseFloat(prev.replace(/[$,]/g,'')),b=parseFloat(txt.replace(/[$,]/g,''));el.classList.remove('market-data-up','market-data-down');if(isFinite(a)&&isFinite(b)&&a!==b){el.classList.add(b>a?'market-data-up':'market-data-down');clearTimeout(el._colorTimer);el._colorTimer=setTimeout(()=>el.classList.remove('market-data-up','market-data-down'),160)}}}
+function observeOne(el){if(!el)return;last.set(el,el.textContent.trim());new MutationObserver(()=>pulse(el)).observe(el,{childList:true,subtree:true,characterData:true})}
 tracked.forEach(s=>observeOne($(s)));
+function makeBookView(src){const view=document.createElement('div');view.className=src.className+' market-live-view';src.classList.add('market-live-source');for(let i=0;i<10;i++){const row=document.createElement('div');row.className='book-row';row.innerHTML='<span>—</span><span>—</span><span>—</span>';view.appendChild(row)}src.after(view);return view}
+function makeTradeView(src){const view=document.createElement('div');view.className=src.className+' market-live-view';src.classList.add('market-live-source');for(let i=0;i<10;i++){const row=document.createElement('div');row.className='trade-row';row.innerHTML='<span>—</span><span>—</span><span>—</span>';view.appendChild(row)}src.after(view);return view}
+function syncBook(src,view){const rows=[...src.querySelectorAll('.book-row')],out=[...view.querySelectorAll('.book-row')];out.forEach((row,i)=>{const s=rows[i];if(!s){row.classList.add('is-empty');row.style.setProperty('--depth','0%');row.children[0].textContent='—';row.children[1].textContent='—';row.children[2].textContent='—';return}row.classList.remove('is-empty');const cells=s.querySelectorAll('span');for(let j=0;j<3;j++){const next=cells[j]?.textContent||'—';if(row.children[j].textContent!==next){row.children[j].textContent=next;row.children[j].classList.remove('cell-updated');requestAnimationFrame(()=>row.children[j].classList.add('cell-updated'))}}row.style.setProperty('--depth',s.style.getPropertyValue('--depth')||'0%')})}
+function syncTrades(src,view){const rows=[...src.querySelectorAll('.trade-row')],out=[...view.querySelectorAll('.trade-row')];out.forEach((row,i)=>{const s=rows[i];if(!s){row.className='trade-row is-empty';row.children[0].textContent='—';row.children[1].textContent='—';row.children[2].textContent='—';return}row.className=s.className;const cells=s.querySelectorAll('span');for(let j=0;j<3;j++){const next=cells[j]?.textContent||'—';if(row.children[j].textContent!==next){row.children[j].textContent=next;row.children[j].classList.remove('cell-updated');requestAnimationFrame(()=>row.children[j].classList.add('cell-updated'))}}})}
+function mountSmoothFeed(src,kind){if(!src)return null;const view=kind==='book'?makeBookView(src):makeTradeView(src);let dirty=true,syncUntil=0;const apply=()=>{if(Date.now()<syncUntil)return;if(!dirty)return;dirty=false;kind==='book'?syncBook(src,view):syncTrades(src,view);view.classList.remove('is-syncing')};new MutationObserver(()=>{dirty=true}).observe(src,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['style','class']});setInterval(apply,220);return{src,view,resync(){syncUntil=Date.now()+360;dirty=true;view.classList.add('is-syncing');[...view.querySelectorAll('.book-row,.trade-row')].forEach(r=>r.classList.add('is-empty'))}}}
+const feeds=[mountSmoothFeed($('[data-asks]'),'book'),mountSmoothFeed($('[data-bids]'),'book'),mountSmoothFeed($('[data-trades]'),'trade')].filter(Boolean);
+const symbol=$('[data-selected-symbol]');if(symbol)new MutationObserver(()=>feeds.forEach(f=>f.resync())).observe(symbol,{childList:true,subtree:true,characterData:true});
 })();

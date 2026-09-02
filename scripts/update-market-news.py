@@ -5,11 +5,11 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 QUERIES = [
-    'digital asset regulation institutional finance Reuters OR Bloomberg OR CNBC OR CoinDesk',
-    'tokenization financial markets blockchain infrastructure Reuters OR Bloomberg OR Financial Times OR CoinDesk',
-    'stablecoin regulation payments institutions Reuters OR CNBC OR CoinDesk OR Fortune',
-    'crypto market structure institutional liquidity Reuters OR Bloomberg OR CoinDesk OR The Block',
-    'digital asset cybersecurity blockchain security Reuters OR CNBC OR CoinDesk'
+    'digital asset regulation institutional finance',
+    'tokenization financial markets blockchain infrastructure',
+    'stablecoin regulation payments institutions',
+    'crypto market structure institutional liquidity',
+    'digital asset cybersecurity blockchain security'
 ]
 TRUSTED = {
     'Reuters': 100,
@@ -29,6 +29,14 @@ TRUSTED = {
     'Forbes': 78
 }
 MIN_SCORE = 78
+TOPIC_TERMS = (
+    'crypto','digital asset','tokeniz','tokenis','stablecoin','blockchain','bitcoin','ethereum',
+    'web3','custody','crypto exchange','digital currency','cbdc','distributed ledger','on-chain','onchain'
+)
+PROMO_TERMS = (
+    'sponsored','press release','partner content','shares outlook','founder says','price prediction',
+    'could surge','to the moon','presale','airdrop','meme coin','memecoin'
+)
 SEED = [
     {'source':'U.S. SEC','date':'POLICY','title':'Digital Asset Regulation & Policy','summary':'Current U.S. Securities and Exchange Commission information relevant to crypto assets, market structure and investor protection.','url':'https://www.sec.gov/about/crypto-task-force/crypto-newsroom'},
     {'source':'U.S. CFTC','date':'MARKETS','title':'Derivatives & Market Structure Updates','summary':'Current releases affecting derivatives, trading infrastructure, market integrity and digital assets.','url':'https://www.cftc.gov/PressRoom/PressReleases'},
@@ -46,7 +54,7 @@ def fetch(url, attempts=4):
     err = None
     for i in range(attempts):
         try:
-            req = urllib.request.Request(url, headers={'User-Agent':'DAppsPlatformMarketIntelligence/1.1'})
+            req = urllib.request.Request(url, headers={'User-Agent':'DAppsPlatformMarketIntelligence/1.2'})
             with urllib.request.urlopen(req, timeout=20) as r:
                 return r.read()
         except Exception as e:
@@ -59,6 +67,10 @@ def score(source):
         if key.lower() in source.lower():
             return value
     return 0
+
+def directly_relevant(title):
+    t = title.lower()
+    return any(term in t for term in TOPIC_TERMS) and not any(term in t for term in PROMO_TERMS)
 
 def parse_query(query):
     url = 'https://news.google.com/rss/search?' + urllib.parse.urlencode({'q':query,'hl':'en-US','gl':'US','ceid':'US:en'})
@@ -75,7 +87,7 @@ def parse_query(query):
         except Exception:
             dt = datetime.now(timezone.utc)
         s = score(source)
-        if not title or not link or s < MIN_SCORE:
+        if not title or not link or s < MIN_SCORE or not directly_relevant(title):
             continue
         out.append({'source':source,'title':title,'url':link,'dt':dt,'score':s})
     return out
@@ -122,7 +134,7 @@ def main():
 
     payload = {
         'generated_at':datetime.now(timezone.utc).isoformat().replace('+00:00','Z'),
-        'editorial_standard':'Institutional, regulatory, infrastructure and security relevance; promotional and low-authority sources excluded.',
+        'editorial_standard':'Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.',
         'items':selected[:8]
     }
     path = Path(__file__).resolve().parents[1]/'data'/'market-news.json'

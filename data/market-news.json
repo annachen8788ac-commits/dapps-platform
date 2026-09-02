@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-09-02T19:15:16.859572Z",
+  "generated_at": "2026-09-02T19:26:45.558731Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Aug 26",
+      "title": "Bank of Japan explores tokenized central bank money as 2026 digital yen decision looms - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZDdDcktVT3J0OU5CLW41U2ZOajZBTko2aXRiXzJ4Q011dFAwa0JtdGJqQ09rNjZRLW52SHlUSFJKTnZsYlRGOGQ1a1JWQTNDYnpKcEdkVmo5Wm56M25JcWlYVV83VHJ6MnFCUmVWckRucG5jWDFKUzdTX1JoQUFrdzU4enR1UEtURFlHZW9ab2ZXTnQ3ZWxCYUx6bXJBOXBqbnhJMS1EcktFSVNLc0NWREFPTjU1VkRNdlE?oc=5"
+    },
     {
       "source": "CoinDesk",
       "date": "Aug 25",
@@ -36,13 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

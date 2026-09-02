@@ -1,6 +1,11 @@
 name: Update Market Intelligence News
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update-market-news.py'
+      - '.github/workflows/update-market-news.yml'
   schedule:
     - cron: '7,22,37,52 * * * *'
   workflow_dispatch:

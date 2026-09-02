@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-09-02T00:00:00Z",
+  "items": [
+    {"source":"U.S. SEC","date":"POLICY","title":"Digital Asset Regulation & Policy","summary":"Current U.S. Securities and Exchange Commission information relevant to crypto assets, market structure and investor protection.","url":"https://www.sec.gov/about/crypto-task-force/crypto-newsroom"},
+    {"source":"U.S. CFTC","date":"MARKETS","title":"Derivatives & Market Structure Updates","summary":"Current releases affecting derivatives, trading infrastructure, market integrity and digital assets.","url":"https://www.cftc.gov/PressRoom/PressReleases"},
+    {"source":"BIS","date":"INFRASTRUCTURE","title":"Tokenisation & Financial Infrastructure","summary":"Research and initiatives covering tokenisation, payments and next-generation financial-market infrastructure.","url":"https://www.bis.org/about/innovation-hub/overview.htm"},
+    {"source":"CISA","date":"SECURITY","title":"Cybersecurity Advisories","summary":"Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.","url":"https://www.cisa.gov/news-events/cybersecurity-advisories"}
+  ]
+}

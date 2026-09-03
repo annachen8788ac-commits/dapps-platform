@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T19:40:04.010274Z",
+  "generated_at": "2026-09-03T19:54:26.205931Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
     {
@@ -8,13 +8,6 @@
       "title": "NYSE owner ICE taps tZERO for tokenized securities push, takes stake in firm - CoinDesk",
       "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQWWxoYVFPeG9UTWlfUE4yaDNpX1RaVEE5aGZIY2NBNW92dmtLamF2ME5ObURydEVLR280RjNiRXRETV9pVjBxNWNodEYzNW0xdS1UeW0wcmNJR0RVZFlFU0NjaWpiMWJNRWs3Nm94Zk0zdFlkOW93cGJYREs2TXVjVUIzNkhOeTVjUHBKaV9YNkhtUng5NlZ3M1ZnbW0xMV9RVWs0bFE4dm5aWEJVc3I4QjlSeGNUMy1iRGR4WA?oc=5"
-    },
-    {
-      "source": "CoinDesk",
-      "date": "Aug 26",
-      "title": "Bank of Japan explores tokenized central bank money as 2026 digital yen decision looms - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZDdDcktVT3J0OU5CLW41U2ZOajZBTko2aXRiXzJ4Q011dFAwa0JtdGJqQ09rNjZRLW52SHlUSFJKTnZsYlRGOGQ1a1JWQTNDYnpKcEdkVmo5Wm56M25JcWlYVV83VHJ6MnFCUmVWckRucG5jWDFKUzdTX1JoQUFrdzU4enR1UEtURFlHZW9ab2ZXTnQ3ZWxCYUx6bXJBOXBqbnhJMS1EcktFSVNLc0NWREFPTjU1VkRNdlE?oc=5"
     },
     {
       "source": "U.S. SEC",
@@ -43,6 +36,13 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
+    },
+    {
+      "source": "Federal Reserve",
+      "date": "POLICY",
+      "title": "Payments, Banking & Financial Innovation",
+      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
+      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

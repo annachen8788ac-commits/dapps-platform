@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-09-03T19:18:32.244144Z",
+  "generated_at": "2026-09-03T19:25:55.523803Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Aug 31",
+      "title": "NYSE owner ICE taps tZERO for tokenized securities push, takes stake in firm - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQWWxoYVFPeG9UTWlfUE4yaDNpX1RaVEE5aGZIY2NBNW92dmtLamF2ME5ObURydEVLR280RjNiRXRETV9pVjBxNWNodEYzNW0xdS1UeW0wcmNJR0RVZFlFU0NjaWpiMWJNRWs3Nm94Zk0zdFlkOW93cGJYREs2TXVjVUIzNkhOeTVjUHBKaV9YNkhtUng5NlZ3M1ZnbW0xMV9RVWs0bFE4dm5aWEJVc3I4QjlSeGNUMy1iRGR4WA?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

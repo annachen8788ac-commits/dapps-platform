@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-05T06:49:36.804658Z",
+  "generated_at": "2026-09-05T06:55:03.931017Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Sep 04",
+      "title": "South Korea plans stablecoin-settled stock and bond tokenization by early 2027 - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZEF4d2xjdW1EUUd6NC1CdnNWdmJTUEhZUkY3aTVMYmY1NUlrQmNIZmRkeEN5Tm5IbHdyMEs2M1hiZWlVTWp2M1hxS1pPYjdwbVNqTW4wcnJUTGZOdXRKaW5TUWhVYjIwZFZGZG40cjZua280MEswM3VObWMxVTdPbEdfLVhIMWh0RlB3U1JPelU2M2JJX05kOUx4RC1SODJmMDd3WV9YQmE2cDJRanMtcTJqa28xR2p1QkFDU1R1ZzY?oc=5"
+    },
+    {
+      "source": "CoinDesk",
+      "date": "Aug 26",
+      "title": "Bank of Japan explores tokenized central bank money as 2026 digital yen decision looms - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZDdDcktVT3J0OU5CLW41U2ZOajZBTko2aXRiXzJ4Q011dFAwa0JtdGJqQ09rNjZRLW52SHlUSFJKTnZsYlRGOGQ1a1JWQTNDYnpKcEdkVmo5Wm56M25JcWlYVV83VHJ6MnFCUmVWckRucG5jWDFKUzdTX1JoQUFrdzU4enR1UEtURFlHZW9ab2ZXTnQ3ZWxCYUx6bXJBOXBqbnhJMS1EcktFSVNLc0NWREFPTjU1VkRNdlE?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -29,20 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

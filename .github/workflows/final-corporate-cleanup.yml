@@ -1,0 +1,120 @@
+name: Final Corporate Language Cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/final-corporate-cleanup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clean stale corporate language and audit all HTML
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          root = Path('.')
+
+          replacements = {
+              'index.html': {
+                  'U.S. HEADQUARTERS': 'U.S. MARKET OPERATIONS',
+              },
+              'careers/index.html': {
+                  "Executive and professional opportunities helping build DApps Platform's U.S. organization in Los Angeles.": "Executive and professional opportunities supporting DApps Platform's U.S. market operations in Los Angeles.",
+                  'development of the U.S. organization': 'development of the Company’s U.S. market operations',
+                  'grow with the organization': 'grow with the Company’s U.S. market operations',
+                  'as the organization grows': 'as U.S. market operations grow',
+                  'required to build the organization': 'required to build the Company’s U.S. market operations',
+              },
+              'leadership/index.html': {
+                  'support a professional U.S. organization': 'support professional U.S. market operations',
+                  "during the organization's development": "during the development of the Company’s U.S. market operations",
+                  'supporting the U.S. organization': 'supporting U.S. market operations',
+              },
+              'Head-of-Internal-Audit-DApps-Platform-USA/index.html': {
+                  "Company's U.S. organization": "Company's U.S. market operations",
+                  'with the Company\'s U.S. organization': "with the Company's U.S. market operations",
+                  'as the U.S. organization grows': 'as U.S. market operations grow',
+                  'Strengthen the organization.': "Strengthen the Company's controls.",
+                  'across the organization': 'across the Company',
+              },
+              'Vice-President-of-Sales-DApps-Platform-USA/index.html': {
+                  'professional U.S. sales organization': 'professional U.S. commercial function',
+                  '<h3>Commercial Organization</h3>': '<h3>Commercial Team</h3>',
+                  'as the organization grows': 'as U.S. market operations grow',
+                  'Scale the team.': 'Scale the commercial team.',
+              },
+          }
+
+          for rel, mapping in replacements.items():
+              p = root / rel
+              text = p.read_text(encoding='utf-8')
+              original = text
+              for old, new in mapping.items():
+                  text = text.replace(old, new)
+              if text != original:
+                  p.write_text(text, encoding='utf-8')
+
+          # Global cleanup of the specific stale legal-structure phrase.
+          for p in root.rglob('*.html'):
+              text = p.read_text(encoding='utf-8', errors='ignore')
+              text = text.replace('U.S. organization', 'U.S. market operations')
+              text = text.replace('U.S. operating organization', 'U.S. market operations')
+              p.write_text(text, encoding='utf-8')
+
+          banned = [
+              'DApps Platform USA, Inc.',
+              'independently governed U.S. operating organization',
+              'independently governed U.S. organization',
+              'U.S. HEADQUARTERS',
+              'U.S. organization',
+              'U.S. operating organization',
+              'One U.S. operating organization. Clear legal responsibility.',
+          ]
+          pages = list(root.rglob('*.html'))
+          for p in pages:
+              text = p.read_text(encoding='utf-8', errors='ignore')
+              for phrase in banned:
+                  if phrase in text:
+                      raise SystemExit(f'{p}: stale phrase remains: {phrase}')
+
+          required = {
+              'index.html': ['U.S. MARKET OPERATIONS', 'U.S. market-facing business brand and operating designation of DApps Platform Inc.'],
+              'careers/index.html': ['Clear U.S. identity. Clear legal responsibility.', 'applicable legal employer and contracting party', 'U.S. market operations'],
+              'company-verification/index.html': ['4190391 (C4190391)', 'VIEW SIGNED CORPORATE AUTHORIZATION (PDF)', 'not the board of a separately incorporated DApps Platform USA entity'],
+              'compliance/index.html': ['U.S. Governance &amp; Authorized Operations', 'U.S. market-facing business brand and operating designation'],
+              'leadership/index.html': ['Internal governance for U.S. market operations.', 'not the board of a separately incorporated DApps Platform USA entity'],
+              'terms/index.html': ['U.S. market-facing business brand, trade name, and operating designation'],
+              'privacy/index.html': ['U.S. market-facing business and operating designation of DApps Platform Inc.'],
+              'trust-wallet/index.html': ['How DApps Platform USA is authorized', 'does not transfer ownership of Trust Wallet'],
+              'Vice-President-of-Sales-DApps-Platform-USA/index.html': ['U.S. Business Designation', 'DApps Platform USA Board', 'Legal Employer', 'Commercial Team'],
+              'Head-of-Internal-Audit-DApps-Platform-USA/index.html': ['U.S. Business Designation', 'DApps Platform USA Board', 'Legal Employer', "Company's U.S. market operations"],
+          }
+          for rel, phrases in required.items():
+              text = (root / rel).read_text(encoding='utf-8')
+              for phrase in phrases:
+                  if phrase not in text:
+                      raise SystemExit(f'{rel}: missing required phrase: {phrase}')
+
+          pdf = root / 'documents/dapps-platform-inc-corporate-authorization-dapps-platform-usa.pdf'
+          if not pdf.exists() or pdf.stat().st_size < 1000:
+              raise SystemExit('Signed Corporate Authorization PDF is missing')
+
+          print(f'Final audit passed across {len(pages)} HTML pages.')
+          PY
+      - name: Commit cleanup
+        run: |
+          git config user.name "DApps Platform USA Records"
+          git config user.email "noreply@dappsplatformusa.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes required"
+          else
+            git commit -m "Finalize corporate language across website and job descriptions"
+            git push
+          fi

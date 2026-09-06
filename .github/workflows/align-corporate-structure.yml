@@ -1,0 +1,183 @@
+name: Align Corporate Structure Disclosures
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/align-corporate-structure.yml
+
+permissions:
+  contents: write
+
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Align company, governance, careers, and legal disclosures
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def edit(path, old, new, required=True):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              if new in s:
+                  return
+              if old not in s:
+                  if required:
+                      raise SystemExit(f'Expected source text not found in {path}: {old[:90]!r}')
+                  return
+              p.write_text(s.replace(old, new, 1), encoding='utf-8')
+
+          # HOME: make the public U.S. operating identity explicit without presenting USA as a separate corporation.
+          edit(
+              'index.html',
+              'DApps Platform is establishing its U.S. operating presence in Los Angeles. The company is building its technology, operating model, and team with a long-term focus on digital finance infrastructure.',
+              'DApps Platform USA is the independently governed U.S. operating organization of DApps Platform Inc., with its U.S. operating presence being developed in Los Angeles. DApps Platform USA maintains its own U.S. leadership and Board oversight, while DApps Platform Inc. serves as the underlying legal entity for applicable employment, contracting, and corporate obligations.'
+          )
+
+          # ABOUT: distinguish operating/governance independence from legal-entity status.
+          edit(
+              'about/index.html',
+              '<h3>U.S. Operations</h3><p>DApps Platform is establishing its U.S. operating presence in Los Angeles, California. As the company develops, this page will be updated with additional information about the team, offices, products, and operating capabilities.</p>',
+              '<h3>U.S. Operating Structure</h3><p>DApps Platform USA is the independently governed U.S. operating organization of DApps Platform Inc. It is being developed with its own U.S. leadership structure, operating responsibilities, decision-making framework, and dedicated Board oversight in Los Angeles, California.</p><p>DApps Platform Inc., a Delaware corporation, is the underlying legal entity through which applicable U.S. employment, contracting, and corporate obligations are undertaken. References on this website to DApps Platform USA describe the U.S. operating and governance organization and should not be read as a statement that DApps Platform USA is a separately incorporated legal entity.</p>'
+          )
+
+          # LEADERSHIP: explicitly identify the dedicated DApps Platform USA Board and its oversight role.
+          edit(
+              'leadership/index.html',
+              '<section class="verification-section light"><div class="container"><div class="verification-heading"><div class="eyebrow">LEADERSHIP FUNCTIONS</div><h2>Capabilities being established.</h2><p>The developing operating model is intended to provide clear ownership, independent oversight, and disciplined execution.</p></div>',
+              '<section class="verification-section light"><div class="container"><div class="verification-heading"><div class="eyebrow">DApps PLATFORM USA BOARD</div><h2>Dedicated governance for the U.S. organization.</h2><p>DApps Platform USA maintains a dedicated Board governance structure for the U.S. operating organization. The DApps Platform USA Board provides strategic oversight, executive accountability, independent challenge, escalation, and governance of material U.S. business matters. Certain U.S. executive positions report directly to the DApps Platform USA Board according to their mandate and governance responsibilities.</p><p>DApps Platform Inc. remains the underlying legal entity for applicable employment, contracting, and corporate obligations; the DApps Platform USA Board is the governance body for the U.S. operating organization.</p></div></div></section><section class="verification-section light"><div class="container"><div class="verification-heading"><div class="eyebrow">LEADERSHIP FUNCTIONS</div><h2>Capabilities being established.</h2><p>The developing operating model is intended to provide clear ownership, independent oversight, and disciplined execution.</p></div>'
+          )
+
+          # COMPANY VERIFICATION: turn this into the authoritative public explanation of the structure.
+          edit(
+              'company-verification/index.html',
+              '<div class="verification-copy"><p>DApps Platform is developing its U.S. organization and operating capabilities in Los Angeles, California. Public information on this website is intentionally limited to statements approved for external communication at the current stage of development.</p><p>The website does not present unannounced appointments, confidential corporate records, non-public office information, or regulatory status that has not been expressly verified and approved for publication.</p><p>Additional corporate information may be added as organizational milestones are completed and disclosure is appropriate.</p></div>',
+              '<div class="verification-copy"><p><strong>DApps Platform Inc.</strong>, a Delaware corporation, is the underlying legal entity for applicable U.S. employment, contracting, and corporate obligations.</p><p><strong>DApps Platform USA</strong> is the independently governed U.S. operating organization through which the Company is developing its U.S. leadership, operating capabilities, and business activities in Los Angeles, California. DApps Platform USA maintains its own U.S. leadership framework and dedicated Board oversight.</p><p><strong>DApps Platform USA Board</strong> is the dedicated governance body for the U.S. operating organization, providing strategic oversight, executive accountability, independent challenge, and escalation for material U.S. business matters.</p><p>This distinction is intended to separate operational and governance identity from legal-entity identity. DApps Platform USA should not be interpreted as a separately incorporated legal entity unless expressly stated in supporting corporate documentation.</p></div>'
+          )
+          edit(
+              'company-verification/index.html',
+              '<article class="verification-card"><span class="number">02</span><h3>Legal Entities</h3><p>References to similarly named entities, brands, public records, or ecosystem participants do not by themselves establish that separate legal entities are interchangeable.</p></article>',
+              '<article class="verification-card"><span class="number">02</span><h3>Legal &amp; Operating Structure</h3><p>DApps Platform Inc. is the underlying legal entity. DApps Platform USA is the independently governed U.S. operating organization, with dedicated U.S. leadership and Board oversight. These roles should not be treated as interchangeable legal identities.</p></article>'
+          )
+          edit(
+              'company-verification/index.html',
+              '<article class="verification-card"><span class="number">05</span><h3>Employment Information</h3><p>Career information is subject to role requirements, eligibility, final approval, applicable law, and the terms of any formal written offer.</p></article>',
+              '<article class="verification-card"><span class="number">05</span><h3>Employment Information</h3><p>Executive and professional roles may operate within DApps Platform USA while formal employment agreements are entered into through DApps Platform Inc. as the applicable legal employing entity. Role requirements remain subject to final written terms and applicable law.</p></article>'
+          )
+
+          # CAREERS: explain the employment structure before candidates reach individual role pages.
+          edit(
+              'careers/index.html',
+              '<section class="careers-positions" id="open-positions">',
+              '<section class="careers-intro" id="employment-structure"><div class="container"><div class="careers-two-column"><div><div class="careers-label">U.S. EMPLOYMENT STRUCTURE</div><h2>One U.S. operating organization. Clear legal responsibility.</h2></div><div class="careers-intro-copy"><p>DApps Platform USA is the independently governed U.S. operating organization in which these U.S. roles are structured, including dedicated U.S. leadership and Board oversight.</p><p>DApps Platform Inc. is the underlying legal entity and may serve as the legal employer and contracting party for applicable U.S. employment agreements.</p><p>This structure allows executive roles to operate within DApps Platform USA while keeping formal legal and contractual obligations clearly identified in the applicable written agreement.</p></div></div></div></section><section class="careers-positions" id="open-positions">'
+          )
+
+          # VP SALES: direct Board reporting + legal employer disclosure.
+          edit(
+              'Vice-President-of-Sales-DApps-Platform-USA/index.html',
+              '<p>DApps Platform is building its U.S. organization in Los Angeles and developing the commercial, operating, technology, and governance capabilities required for its next stage of growth.</p>',
+              '<p>DApps Platform USA is the independently governed U.S. operating organization of DApps Platform Inc., with dedicated U.S. leadership and Board oversight. The organization is building its commercial, operating, technology, and governance capabilities in Los Angeles for its next stage of growth.</p>'
+          )
+          edit(
+              'Vice-President-of-Sales-DApps-Platform-USA/index.html',
+              '<strong>Reporting To</strong><span style="color:#596371;">Senior Leadership</span>',
+              '<strong>Reporting To</strong><span style="color:#596371;">DApps Platform USA Board</span>'
+          )
+          edit(
+              'Vice-President-of-Sales-DApps-Platform-USA/index.html',
+              '<strong>Location</strong><span style="color:#596371;">Los Angeles, California, United States</span>',
+              '<strong>Legal Employer</strong><span style="color:#596371;">DApps Platform Inc.</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:30px;padding:22px 0;border-bottom:1px solid #dfe4ea;"><strong>Operating Organization</strong><span style="color:#596371;">DApps Platform USA</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:30px;padding:22px 0;border-bottom:1px solid #dfe4ea;"><strong>Location</strong><span style="color:#596371;">Los Angeles, California, United States</span>'
+          )
+
+          # INTERNAL AUDIT: direct Board reporting + legal employer disclosure.
+          edit(
+              'Head-of-Internal-Audit-DApps-Platform-USA/index.html',
+              '<p>DApps Platform is building its U.S. organization in Los Angeles and establishing the governance, control, risk management, and operating capabilities required to support its next stage of development.</p>',
+              '<p>DApps Platform USA is the independently governed U.S. operating organization of DApps Platform Inc., with dedicated U.S. leadership and Board oversight. The organization is establishing the governance, control, risk-management, and operating capabilities required to support its next stage of development in Los Angeles.</p>'
+          )
+          edit(
+              'Head-of-Internal-Audit-DApps-Platform-USA/index.html',
+              '<strong>Reporting To</strong><span style="color:#596371;">Senior Leadership</span>',
+              '<strong>Reporting To</strong><span style="color:#596371;">DApps Platform USA Board</span>'
+          )
+          edit(
+              'Head-of-Internal-Audit-DApps-Platform-USA/index.html',
+              '<strong>Location</strong><span style="color:#596371;">Los Angeles, California, United States</span>',
+              '<strong>Legal Employer</strong><span style="color:#596371;">DApps Platform Inc.</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:30px;padding:22px 0;border-bottom:1px solid #dfe4ea;"><strong>Operating Organization</strong><span style="color:#596371;">DApps Platform USA</span></div><div style="display:grid;grid-template-columns:220px 1fr;gap:30px;padding:22px 0;border-bottom:1px solid #dfe4ea;"><strong>Location</strong><span style="color:#596371;">Los Angeles, California, United States</span>'
+          )
+
+          # COMPLIANCE: identify governance body without suggesting a license or separate legal person.
+          edit(
+              'compliance/index.html',
+              '<h3>Governance &amp; Independent Challenge</h3><p>The developing U.S. operating model is intended to support clear accountability, appropriate separation of responsibilities, risk and compliance oversight, documented escalation, remediation tracking, and independent assurance as those functions are established.</p>',
+              '<h3>Governance &amp; Independent Challenge</h3><p>DApps Platform USA maintains a dedicated Board governance structure for its U.S. operating organization. The DApps Platform USA Board provides strategic oversight, executive accountability, escalation, and independent challenge for material U.S. business matters. DApps Platform Inc. remains the underlying legal entity for applicable corporate, contracting, and employment obligations.</p>'
+          )
+
+          # TERMS: remove ambiguity over what the website name means.
+          edit(
+              'terms/index.html',
+              '<p>By accessing this website, you agree to use it for lawful informational purposes. The content is provided for general information about DApps Platform and its developing technology and operating roadmap.</p>',
+              '<p>By accessing this website, you agree to use it for lawful informational purposes. The content is provided for general information about DApps Platform and its developing technology and operating roadmap.</p><h2>Company References</h2><p>References to DApps Platform USA on this website describe the independently governed U.S. operating organization of DApps Platform Inc. DApps Platform Inc. is the underlying legal entity for applicable corporate, contracting, and employment obligations. DApps Platform USA should not be interpreted as a separately incorporated legal entity unless expressly stated in supporting corporate documentation.</p>'
+          )
+
+          # PRIVACY: clarify naming only; do not invent a data-controller status.
+          edit(
+              'privacy/index.html',
+              '<section class="section"><div class="container legal"><h2>Information You Provide</h2>',
+              '<section class="section"><div class="container legal"><h2>Company References</h2><p>References to DApps Platform USA on this website describe the U.S. operating organization of DApps Platform Inc. This naming distinction does not change the privacy practices described below.</p><h2>Information You Provide</h2>'
+          )
+
+          # TRUST WALLET: keep entity distinctions explicit and align USA terminology.
+          tw = Path('trust-wallet/index.html')
+          if tw.exists():
+              s = tw.read_text(encoding='utf-8')
+              marker = 'DApps Platform USA should not be read as a statement that every similarly named entity is the same legal entity.'
+              replacement = 'DApps Platform USA is the independently governed U.S. operating organization of DApps Platform Inc.; it should not be read as a statement that every similarly named DApps Platform entity is the same legal entity or has the same relationship to Trust Wallet.'
+              if marker in s and replacement not in s:
+                  tw.write_text(s.replace(marker, replacement), encoding='utf-8')
+
+          PY
+
+      - name: Verify aligned public language
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          checks = {
+            'index.html': ['DApps Platform USA', 'independently governed U.S. operating organization', 'DApps Platform Inc.'],
+            'about/index.html': ['DApps Platform Inc., a Delaware corporation', 'dedicated Board oversight'],
+            'leadership/index.html': ['DApps Platform USA Board', 'Dedicated governance for the U.S. organization'],
+            'company-verification/index.html': ['Legal &amp; Operating Structure', 'DApps Platform USA Board', 'legal employing entity'],
+            'careers/index.html': ['U.S. EMPLOYMENT STRUCTURE', 'DApps Platform Inc.', 'DApps Platform USA'],
+            'Vice-President-of-Sales-DApps-Platform-USA/index.html': ['DApps Platform USA Board', 'Legal Employer', 'DApps Platform Inc.'],
+            'Head-of-Internal-Audit-DApps-Platform-USA/index.html': ['DApps Platform USA Board', 'Legal Employer', 'DApps Platform Inc.'],
+            'compliance/index.html': ['DApps Platform USA Board', 'underlying legal entity'],
+            'terms/index.html': ['Company References', 'separately incorporated legal entity'],
+            'privacy/index.html': ['Company References', 'U.S. operating organization of DApps Platform Inc.'],
+          }
+          for path, items in checks.items():
+              text = Path(path).read_text(encoding='utf-8')
+              for item in items:
+                  assert item in text, f'{path}: missing {item}'
+
+          html = '\n'.join(p.read_text(encoding='utf-8', errors='ignore') for p in Path('.').rglob('*.html'))
+          assert 'DApps Platform USA, Inc.' not in html
+          print('Corporate structure disclosures verified across public pages.')
+          PY
+
+      - name: Commit aligned website disclosures
+        run: |
+          git config user.name "DApps Platform USA Records"
+          git config user.email "noreply@dappsplatformusa.com"
+          git add index.html about/index.html leadership/index.html company-verification/index.html careers/index.html \
+            Vice-President-of-Sales-DApps-Platform-USA/index.html Head-of-Internal-Audit-DApps-Platform-USA/index.html \
+            compliance/index.html terms/index.html privacy/index.html trust-wallet/index.html
+          if git diff --cached --quiet; then
+            echo "No disclosure changes to commit"
+          else
+            git commit -m "Align U.S. legal, operating, and Board disclosures"
+            git push
+          fi

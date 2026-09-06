@@ -1,0 +1,26 @@
+name: Publish Corporate Authorization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/corporate-authorization.pdf.b64
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish signed authorization and align public disclosures
+        run: python .github/scripts/publish_corporate_authorization.py
+      - name: Commit published records
+        run: |
+          git config user.name "DApps Platform USA Records"
+          git config user.email "noreply@dappsplatformusa.com"
+          rm -f .github/corporate-authorization.pdf.b64
+          git add -A
+          git commit -m "Publish signed corporate authorization and align U.S. disclosures"
+          git push

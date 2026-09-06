@@ -3,7 +3,7 @@ import base64, hashlib
 from corporate_alignment_common import ROOT, all_html
 import corporate_alignment_a, corporate_alignment_b, corporate_alignment_audit
 
-PARTS = [ROOT / f'.github/corporate-authorization.part{i}.b64' for i in range(1, 5)]
+PARTS = [ROOT / f'.github/corporate-authorization.a{i:02d}.b64' for i in range(1, 13)]
 PDF = ROOT / 'documents/dapps-platform-inc-corporate-authorization-dapps-platform-usa.pdf'
 EXPECTED = 'a841d6b080cb98e23e34194db97e5d76d3f59f8be60b47a43f8ee4d6169ab26a'
 

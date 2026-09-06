@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - .github/corporate-authorization.pdf.b64
+      - .github/corporate-authorization.part4.b64
 
 permissions:
   contents: write
@@ -20,7 +20,7 @@ jobs:
         run: |
           git config user.name "DApps Platform USA Records"
           git config user.email "noreply@dappsplatformusa.com"
-          rm -f .github/corporate-authorization.pdf.b64
+          rm -f .github/corporate-authorization.part*.b64
           git add -A
           git commit -m "Publish signed corporate authorization and align U.S. disclosures"
           git push

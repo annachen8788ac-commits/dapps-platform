@@ -1,0 +1,37 @@
+name: Fix Mobile Menu Overlay
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-mobile-menu-overlay.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Force mobile dropdown above update banner
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+          old = '@media(max-width:780px){.site-update-inner{width:calc(100% - 28px);min-height:48px;padding:8px 0;gap:9px;font-size:10px;line-height:1.4}.site-update-label{font-size:8px}.site-update-detail{display:none}.hero-content{padding-top:168px}}'
+          new = '@media(max-width:780px){.site-update-inner{width:calc(100% - 28px);min-height:48px;padding:8px 0;gap:9px;font-size:10px;line-height:1.4}.site-update-label{font-size:8px}.site-update-detail{display:none}.hero-content{padding-top:168px}.nav-links.open{position:fixed!important;top:70px!important;right:14px!important;left:auto!important;z-index:2147483647!important;width:min(290px,calc(100vw - 28px))!important;max-height:calc(100vh - 84px)!important}.site-update{z-index:0!important}}'
+          if old not in s:
+              raise SystemExit('Expected mobile banner style not found')
+          s = s.replace(old, new, 1)
+          s = s.replace('/js/site.js?v=20260902-strategy1', '/js/site.js?v=20260906-menuoverlay2')
+          p.write_text(s)
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'Fix mobile dropdown layering above update banner'
+          git push

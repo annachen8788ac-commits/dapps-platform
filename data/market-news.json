@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T22:28:35.657232Z",
+  "generated_at": "2026-09-16T22:43:10.087631Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
     {
@@ -8,6 +8,13 @@
       "title": "Nasdaq invests $100 million in Kraken parent, eyeing 2027 launch of 'tokenized' stock trading - CNBC",
       "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWHRvako5T0cwb1hGVGREcmdSR3JlU3hwMm9IRlItZkZWbVlnSnMxVEFPNWFvcV9OTEg0VHNwUi1XNjZjUUxMOG55NWxEdjVDZG5lRlUwZnpzallQSE52aTB6UmRmamY1WG5MVkRHdjBsUGw3V0Jpd1FLaTdRTE5vRWdKWWRrdUJtam9lYllURkM0RlUzN2FFelN6cDRYUC1sRFJyZ2FPUVFrQTdpOURfcHIwdm9mUdIBuwFBVV95cUxOa1hwTGktckFqczNMY1RsM2VmYXY1RzF6VDVrNjBHRHU5dUZlejNqTTNWcVlxUWg5R3Y0U1p1UVlXX0swOXE2RUotdHZmWm5Tc01iZXJQQ1RRYWVGbVhqVG5xYU1QVzlnV2JrMlljaTZ5QS1GUWJyRTR2ZEpHczdvMWY1UFIzZFBITlpVbEpYZ1p5eDJPWU5zQmJaLXNreXdzNVlleGpCVzNlTEVjaWd6c0hxRi04b3lRWndF?oc=5"
+    },
+    {
+      "source": "CoinDesk",
+      "date": "Sep 15",
+      "title": "The Definitive Stablecoin Landscape Series: Asia Pacific - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNLWo2NENUWDA1blgxTHhOcnVSbTFCaGc3U3VTbnFZOHNUYzJvNlhyN2VnX2M5VTdnNTNfSGxyUFZJLXY3VXRETmtLXzNNS2hQbWtQTVVOSUhoQ3ZPM08wUU42Z3FHYTVHMkZUQXRYSGFMY3gzUnFydkhGXzd3ckxjYTJRMU9ZV1dMZHpxamhSTV80NFE?oc=5"
     },
     {
       "source": "CoinDesk",
@@ -36,13 +43,6 @@
       "title": "Derivatives & Market Structure Updates",
       "summary": "Current releases affecting derivatives, trading infrastructure, market integrity and digital assets.",
       "url": "https://www.cftc.gov/PressRoom/PressReleases"
-    },
-    {
-      "source": "BIS",
-      "date": "INFRASTRUCTURE",
-      "title": "Tokenisation & Financial Infrastructure",
-      "summary": "Research and initiatives covering tokenisation, payments and next-generation financial-market infrastructure.",
-      "url": "https://www.bis.org/about/innovation-hub/overview.htm"
     }
   ]
 }

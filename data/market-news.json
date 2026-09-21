@@ -1,14 +1,7 @@
 {
-  "generated_at": "2026-09-21T10:54:48.967085Z",
+  "generated_at": "2026-09-21T11:18:05.117257Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
-    {
-      "source": "CoinDesk",
-      "date": "Sep 15",
-      "title": "The Definitive Stablecoin Landscape Series: Asia Pacific - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNLWo2NENUWDA1blgxTHhOcnVSbTFCaGc3U3VTbnFZOHNUYzJvNlhyN2VnX2M5VTdnNTNfSGxyUFZJLXY3VXRETmtLXzNNS2hQbWtQTVVOSUhoQ3ZPM08wUU42Z3FHYTVHMkZUQXRYSGFMY3gzUnFydkhGXzd3ckxjYTJRMU9ZV1dMZHpxamhSTV80NFE?oc=5"
-    },
     {
       "source": "CoinDesk",
       "date": "Sep 11",
@@ -43,6 +36,13 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
+    },
+    {
+      "source": "Federal Reserve",
+      "date": "POLICY",
+      "title": "Payments, Banking & Financial Innovation",
+      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
+      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

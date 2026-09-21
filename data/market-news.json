@@ -1,14 +1,7 @@
 {
-  "generated_at": "2026-09-21T12:35:30.581690Z",
+  "generated_at": "2026-09-21T12:51:27.063234Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
-    {
-      "source": "CoinDesk",
-      "date": "Sep 11",
-      "title": "India's richest state considers selling tokenized claims of its power assets to fund new infrastructure - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOUkpFaW1jYTdMX3hrU0xFandPeHFoRzVaYjNIWFZCZ0pkaHBLN1IxUDNNYXpzRC0ydWlCV2ZROWx0UE14M003OWNxVEdJX0tQYkgydmxwZGk3M0xlNFdnSmFWSlI4Rk5oVjJaVnMxZHFUWWpPWmxKVW4wVjFySkdDM3Q4OUUtZ3B5T2Z6Y3REdktZbzFUeFI5cDBTaUR1aG5vWmd4S0JPSko1STF3NzZoXzBJWDNFSW5GNXdzSC1WYVVOdWk4eHVvSWhtSQ?oc=5"
-    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -43,6 +36,13 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
+    },
+    {
+      "source": "U.S. Treasury",
+      "date": "POLICY",
+      "title": "Digital Finance & Financial-System Policy",
+      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
+      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-09-22T15:29:22.752705Z",
+  "generated_at": "2026-09-22T15:43:23.646385Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Sep 21",
+      "title": "ECB launches Pontes to bridge tokenized asset markets with Eurosystem payment infrastructure - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNY012YVBlbWVvYW5CNjVqd0ttdl9XYTBIWXR0elF3TXFsUjFVLWxSTDZONnFJRV85bWRicGZJVG8tVG1WanJnMS1YeVhGNDg1SWR4T1E2QUl5WV9LMm9wbGw3enc3eWNNUkI0WWlhWnkza21FdVhKQlJJWFhoaDJ5czVfbDdmdm84UF9NMDZyNWw5N3h2YkwxT2hrWDh6dXVjOHE4VTI4cVZ6YldKNnFWdm1Nb2t6dWxGTHdNaUxnekdna1Y1UXNMZlVZbw?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

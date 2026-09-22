@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-09-22T03:55:30.891414Z",
+  "generated_at": "2026-09-22T04:17:42.387067Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Sep 21",
+      "title": "Google and Apple seek crypto talent as Big Tech eyes stablecoin and tokenization rails - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQcmd3dFV6cm5DSFpQRXVLa0pCT2JpamNzUHBQSHFMbUREbzBXbmFqYVRVMVpQaER2UldhQnlsSElKcFZXZTFwbUVGU09TUTZXSU02bFhpUU1SQ05nc1dSR1FRT05YekhVUWZ0am9BaWl1V281YXhBV3p6TDhaWGVqZzFrdGQtMXZDS2llX0lHSVRGMjB4M2FZSGJtNC1NQnZsRUhjSndUODJ5dHYwSU5Fc1Y4RllGZjQxejVVZXlvZkdNUmFKOU01VXd2bw?oc=5"
+    },
     {
       "source": "CoinDesk",
       "date": "Sep 21",
@@ -36,13 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

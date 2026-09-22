@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#031431">
+<meta name="theme-color" content="#031431">\n<meta name="application-name" content="DApps Platform USA">
 <meta name="robots" content="index,follow">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/signal-2026-08-31-18-10-57-373.png">\n<link rel="shortcut icon" type="image/png" href="/assets/signal-2026-08-31-18-10-57-373.png">
 <link rel="stylesheet" href="/css/style.css?v=20260902-final1">
@@ -21,10 +21,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://dappsplatformusa.com/",
-  "name": "DApps Platform USA",
-  "alternateName": "DApps Platform"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://dappsplatformusa.com/#website",
+      "url": "https://dappsplatformusa.com/",
+      "name": "DApps Platform USA",
+      "alternateName": "DApps Platform",
+      "publisher": {
+        "@id": "https://dappsplatformusa.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dappsplatformusa.com/#organization",
+      "name": "DApps Platform USA",
+      "legalName": "DApps Platform Inc.",
+      "url": "https://dappsplatformusa.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dappsplatformusa.com/assets/dapps-platform-logo.png"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/dapps-platform-usa/"
+      ]
+    }
+  ]
 }
 </script>
 </head>

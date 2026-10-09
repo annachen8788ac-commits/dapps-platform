@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-10-08T20:14:42.239065Z",
+  "generated_at": "2026-10-09T00:25:50.295672Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Oct 08",
+      "title": "Crypto for Advisors: Digital assets outran stocks and gold in Q3 - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMXJkSm1CSTBtT3ptaTFURWNZMUFiSGNjN2FaeGFhTTF0dHh1T01MUnRvSW1tUmIzSUFUZVlTZ3Q1NnhaQkQtbGNISkowRmRvRWIxMVNtYUlYSXRSS3FQNTFicE9NdEZiNW44XzdJUWdTWjJ4MDFVRWlnQUw4MkNMNGg1SDEtWGliYUdGanNnWXp5aFZGWUZ5X0ZwR3NMaTFHRnh3T2pYS3plV0RrdzY5YmRhd1ZFbVE?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

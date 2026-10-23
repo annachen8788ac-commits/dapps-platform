@@ -1,14 +1,7 @@
 {
-  "generated_at": "2026-10-23T00:52:01.765991Z",
+  "generated_at": "2026-10-23T05:28:06.972210Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
-    {
-      "source": "CoinDesk",
-      "date": "Oct 19",
-      "title": "CertiK Announces Brand Upgrade to Reflect Its Expanded Role in Digital Asset Risk Management - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVDZBdUF2UWZ2aWQ1Tk9wUjNhTDNyZmt5QXVfbzV2dl8tak94RGgtYURBdkh5WVBGOGpCUVdBU2lFVDZnc2J5YkFjTk8zUzJWOHpaNUhDUjJTWHo4SFZlT19ybzQtclZhaWdGVHRVdjVNdURUa2Q4UmMwTkU1NWxSU2xQMkZ1bGs1aFhaOHRienk0MjN1QkNmSUhqQUxoaGNicnFCS0JPeGV1NDZvQjBqNHBmLUQxclV5NlJQX1JBVU9qYW9iOHpXMzZjcWpKNEZYMGxTR0J2OVB1QQ?oc=5"
-    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -43,6 +36,13 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
+    },
+    {
+      "source": "U.S. Treasury",
+      "date": "POLICY",
+      "title": "Digital Finance & Financial-System Policy",
+      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
+      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

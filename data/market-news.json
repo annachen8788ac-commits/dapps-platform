@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-10-25T06:56:21.409270Z",
+  "generated_at": "2026-10-25T12:29:08.359040Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Oct 22",
+      "title": "Crypto for Advisors: Stablecoins are ready for prime time - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdmlxc2lzSDEwUGxEZXdzeFk0Q3ZMTXY0bjhieUx2a2xGQllrNXZSUXZaSU93emlaSkFNcnlFMjQyeTlOZWpOemlKeEYtWUpFdHhTZVZNRUpkdTA5QWs4NVZuZXBGcGZEMmlDa0Z2eHNGUklEaXl5eWNvbC1KWXpuYVpibHZXOUpWaVNfT0gxQzVPTVpyQlNHVC1YMXdCSmVRekNGSng4LUQ0dWVuM3c?oc=5"
+    },
+    {
+      "source": "CoinDesk",
+      "date": "Oct 21",
+      "title": "OCC's final rule to start fresh in weighing stablecoin rewards against GENIUS Act ban - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeWo3bzhQQnpyaURnT1dZQjNRMTh2Qk1MdndLUTVwMXRUQUxxeFU4RjB4U1BnSlRNN3V1enBtUGpGRGc2azFxaVRhSHNvTUZBcUF6RnRWQUdNbjB6MlJNZUhfTERIR3ZZcU9FSGhKMnoxZkJnSHltYWoyV2pVZWxCaFFIY1FnYkVtTF9iT2IwU2lET19fTHhPRGZzODRqbGNBeHFfYWlDY1E3R1VPbWxDSGdLajNXLUEyc2h1TmR4V2FHUEUyampV?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -29,20 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

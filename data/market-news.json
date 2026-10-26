@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-10-26T14:06:20.713202Z",
+  "generated_at": "2026-10-26T19:52:07.499549Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Oct 26",
+      "title": "Canada opens consultation on draft stablecoin rules, maintains ban on yields - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQzF5LTRDeVlkbFRFSkNvOVo5aUU4c1I4QW9GS0F5ZXIzR0VDRVVTY2VVeTNGUFFTei1yVGpoN2t0SkxhZjl6N2hJV3dkRktldVFwdWxpNDdWM2Utb0Rob0JGa2pJc29fQXA5bWo1MTdqTE81WHFkTjZSSXpIc3VSaDVfTU5xeFFqcWwzeC1SNjdJcTNxQzA4di1FVlhNdjhQeVQ3M2hUSldiSEo1U2RoQVlnbzB1b2p4VEE?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

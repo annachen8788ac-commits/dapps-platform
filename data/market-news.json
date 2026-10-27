@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-10-26T23:23:48.922278Z",
+  "generated_at": "2026-10-27T02:21:51.619982Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Oct 26",
+      "title": "OCC encourages community banks to issue stablecoins as federal deadline nears - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdXAtZGF3dWljOURiUEQ1QUg5OE5ULVBNUDVhNXI3NGQxX0xoQXFqYWxvcG1ucXIxZEVRVDV4aVZRTkMtX3RWTlkwUk1Bd0ZkczNYcWIyMmdncDE1ZU0yd1picmhDSThKYmQ1UEtnYjI0ZC1IakNxak9LYUFCbjV2VE1XWkxOSF9QVHFNVl9XZHZlY29ockpXNGs2b0V1Zk8yTTVQTHRaaGJSa3hPcExIbw?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

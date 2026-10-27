@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:28:58.584245Z",
+  "generated_at": "2026-10-27T23:05:14.900107Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
     {
@@ -8,13 +8,6 @@
       "title": "CF Benchmarks brings Wall Street pricing infrastructure onchain, including data used by BlackRock - CoinDesk",
       "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
       "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVEhHeUNjR3Y1RVFwUkUzX0tjRU10b255WFhoaEZ5Y196aWxoamxIbGY2M2paOVNYRFllOVR3NXRZQThvcTExSVk4d0Y2TGhjR1huc3hCeUtremMwOGRVWS16TU9uY1FuNktyY1JUcExOSVpfblZGYUNnWGNsRFUzZVJyRmdZclVNZko5VTdkcTc1TjhPRXIzQTZzQ1V3Qk9KYnZzWVhGUU1OSDVZN3hMamtOaVd4a0hHTFctbWJNNlJEWFBfR2I4MXpSOVdLQlZYYUtkWkN6VQ?oc=5"
-    },
-    {
-      "source": "CoinDesk",
-      "date": "Oct 26",
-      "title": "OCC encourages community banks to issue stablecoins as federal deadline nears - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdXAtZGF3dWljOURiUEQ1QUg5OE5ULVBNUDVhNXI3NGQxX0xoQXFqYWxvcG1ucXIxZEVRVDV4aVZRTkMtX3RWTlkwUk1Bd0ZkczNYcWIyMmdncDE1ZU0yd1picmhDSThKYmQ1UEtnYjI0ZC1IakNxak9LYUFCbjV2VE1XWkxOSF9QVHFNVl9XZHZlY29ockpXNGs2b0V1Zk8yTTVQTHRaaGJSa3hPcExIbw?oc=5"
     },
     {
       "source": "U.S. SEC",
@@ -43,6 +36,13 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
+    },
+    {
+      "source": "Federal Reserve",
+      "date": "POLICY",
+      "title": "Payments, Banking & Financial Innovation",
+      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
+      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

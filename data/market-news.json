@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-10-27T08:02:04.542506Z",
+  "generated_at": "2026-10-27T14:20:05.661899Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Oct 27",
+      "title": "CF Benchmarks brings Wall Street pricing infrastructure onchain, including data used by BlackRock - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVEhHeUNjR3Y1RVFwUkUzX0tjRU10b255WFhoaEZ5Y196aWxoamxIbGY2M2paOVNYRFllOVR3NXRZQThvcTExSVk4d0Y2TGhjR1huc3hCeUtremMwOGRVWS16TU9uY1FuNktyY1JUcExOSVpfblZGYUNnWGNsRFUzZVJyRmdZclVNZko5VTdkcTc1TjhPRXIzQTZzQ1V3Qk9KYnZzWVhGUU1OSDVZN3hMamtOaVd4a0hHTFctbWJNNlJEWFBfR2I4MXpSOVdLQlZYYUtkWkN6VQ?oc=5"
+    },
     {
       "source": "CoinDesk",
       "date": "Oct 26",
@@ -36,13 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

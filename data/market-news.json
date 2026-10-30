@@ -1,14 +1,7 @@
 {
-  "generated_at": "2026-10-30T08:54:16.662744Z",
+  "generated_at": "2026-10-30T15:47:50.947871Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
-    {
-      "source": "CoinDesk",
-      "date": "Oct 27",
-      "title": "CF Benchmarks brings Wall Street pricing infrastructure onchain, including data used by BlackRock - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVEhHeUNjR3Y1RVFwUkUzX0tjRU10b255WFhoaEZ5Y196aWxoamxIbGY2M2paOVNYRFllOVR3NXRZQThvcTExSVk4d0Y2TGhjR1huc3hCeUtremMwOGRVWS16TU9uY1FuNktyY1JUcExOSVpfblZGYUNnWGNsRFUzZVJyRmdZclVNZko5VTdkcTc1TjhPRXIzQTZzQ1V3Qk9KYnZzWVhGUU1OSDVZN3hMamtOaVd4a0hHTFctbWJNNlJEWFBfR2I4MXpSOVdLQlZYYUtkWkN6VQ?oc=5"
-    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -43,6 +36,13 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
+    },
+    {
+      "source": "U.S. Treasury",
+      "date": "POLICY",
+      "title": "Digital Finance & Financial-System Policy",
+      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
+      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

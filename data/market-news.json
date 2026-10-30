@@ -1,14 +1,7 @@
 {
-  "generated_at": "2026-10-30T02:30:28.456330Z",
+  "generated_at": "2026-10-30T08:54:16.662744Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
-    {
-      "source": "CoinDesk",
-      "date": "Oct 28",
-      "title": "Google to preview a new crypto security system as private-key hacks mount - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZks2YVpRNDRuYkVwb2lnaC05RHRTczN4SUVIM00zdS1GdWdIOXpadC1KclUwa2FLTzZVMnk0b2hRMnA2V3VnVkdNdTlVSDNjQnp0Tk5jcDhGdEtlUUdEazFpMFFRaXhHUi1sbnN2Wk9mM0ZIUXBMRzA3ckZVdzZEUi05SDVGTWp2aTBMNmM5MHNmNVFKRUVfSFg3TERSRzJseS1jNHFXNk5FYm1y?oc=5"
-    },
     {
       "source": "CoinDesk",
       "date": "Oct 27",
@@ -43,6 +36,13 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
+    },
+    {
+      "source": "Federal Reserve",
+      "date": "POLICY",
+      "title": "Payments, Banking & Financial Innovation",
+      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
+      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

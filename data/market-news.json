@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-11-04T02:08:45.806683Z",
+  "generated_at": "2026-11-04T09:23:40.725492Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CNBC",
+      "date": "Nov 03",
+      "title": "Binance breach puts custody at center of crypto infrastructure trade - CNBC",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUzZOZVJoaFRfSElvZTRzR205QW1lOVBLS1ZKbDQ1SUJUVWZFQWt5ZmIxc3RjeFR2WHY2amxSYkpGM2JpeWdVZ0VJWVVWemFwODRQc3VBQ1BoMFFrQkpHcy1zaHc5WjhRWl9VQ1haUWJOXzVuWjZvYzlVUFc0UHY5bkJ5azE3b25DZ3BfUTJPSkxydVRvR2pMUWlzNGE2dFhrLVpkbjQ1cGLSAa4BQVVfeXFMT09LalBHMFdaYVRDbHpLWG1UUkxEMUlUVVZENHFmV3Zucks1X1R1Y1hqdFl5R0xFQmdzTjBjZHNwYy1nSkhuMDFwa0pDSGMtQ0FIall0ckNuVFlEczJqNEhSTXlCdUR0Y010Yk1NNDM3RVBNVlBmdlF3RWRpWEpkM1BZRThnenljUWpLYWpRR0IxLUZNTDdCdEdmcEFYOWxFM0JfQWZqd2Iyei0xX3Z3?oc=5"
+    },
     {
       "source": "CNBC",
       "date": "Oct 31",
@@ -36,13 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

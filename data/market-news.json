@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-11-19T00:44:56.149230Z",
+  "generated_at": "2026-11-19T07:58:56.533868Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "Financial Fortune Media",
+      "date": "Nov 19",
+      "title": "Africa Stablecoin Summit 2026 Celebrates the Voices Shaping Africa’s Digital Financial Future - Financial Fortune Media",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPY2dlVEliVlg3cE9Xb3VPX2gyVjU5Ri1aLWRNclNCN2pUU0F6X3h3VlQ2RjdSQzFFVjNLUHhTdWlhai1GdDJhMlpGZ1ViODg0VVZUdEhITFhXeTFkYVZvLS12X2dWUVlsZ2tYRm1tbERlSHVTNU8zeEp2UWMxelBJUHRxdHgwMmQ1UFkzRXJpWUpkRmQ4amN1S2g3cHpEOFE5VmF2VEktS3JuaVlWeGIyMWxYSEFRRlljMUVSX3VNanlyczdqNjZwMkpudw?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

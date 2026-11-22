@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-11-21T22:07:27.352599Z",
+  "generated_at": "2026-11-22T02:17:27.240396Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "CoinDesk",
+      "date": "Nov 20",
+      "title": "Lagarde warns Europe could lose tokenized finance lead without unified rules - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWkxlTDdYNmJaTW5zTFQtOFNYd2JzdEx0SVFzcVdGYkNxZ0NodEVoYXhERUU5eUg2TnE2cWZZVWEtZXd5YTUtcjF2RGJrZlNRcnN0VEV0Rl9EWVlHWVJvTFI2aHdRZ0RpS2kyS2VjMDR6ZVIwWVFuTmViYnY3dV9iLW5hdTlrSHBLTWV3TkxRUlRVVGUzdFc0WmRtcng0bDNQVjhnT1ZJcTdESHpEQUg5UlJrNTliVjNiWWlENHBORnM?oc=5"
+    },
+    {
+      "source": "CoinDesk",
+      "date": "Nov 18",
+      "title": "Crypto Long & Short: Crypto exchanges shouldn’t double as the vault - CoinDesk",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVmZHZmFvWU9rcmlSZ3lzdDFZOExNbTJaWUJwZTl6OE5OUXpiNE45bjVUcXhCNlJ0RllvN2dWVU5zRTRtS3MzMGFvSVhRNThLcmo1Q3RiSWtZclhFeVgzYkhFQzFSMnhuUlc2RFlleUFsTUtTNlpGTFlBMzhBcS1wOVFlNXJDMmNwTTktVm8zZHN2alc5OGtiRUhtTG5JRElUeVROc1N3eHZoS1h3R1FjeVJWcW9kRUNqcmRBYmNR?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -29,20 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

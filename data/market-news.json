@@ -1,14 +1,7 @@
 {
-  "generated_at": "2026-11-22T22:49:49.101250Z",
+  "generated_at": "2026-11-23T03:13:45.867837Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
-    {
-      "source": "CoinDesk",
-      "date": "Nov 20",
-      "title": "Lagarde warns Europe could lose tokenized finance lead without unified rules - CoinDesk",
-      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWkxlTDdYNmJaTW5zTFQtOFNYd2JzdEx0SVFzcVdGYkNxZ0NodEVoYXhERUU5eUg2TnE2cWZZVWEtZXd5YTUtcjF2RGJrZlNRcnN0VEV0Rl9EWVlHWVJvTFI2aHdRZ0RpS2kyS2VjMDR6ZVIwWVFuTmViYnY3dV9iLW5hdTlrSHBLTWV3TkxRUlRVVGUzdFc0WmRtcng0bDNQVjhnT1ZJcTdESHpEQUg5UlJrNTliVjNiWWlENHBORnM?oc=5"
-    },
     {
       "source": "Fortune",
       "date": "Nov 19",
@@ -43,6 +36,13 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
+    },
+    {
+      "source": "Federal Reserve",
+      "date": "POLICY",
+      "title": "Payments, Banking & Financial Innovation",
+      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
+      "url": "https://www.federalreserve.gov/newsevents.htm"
     }
   ]
 }

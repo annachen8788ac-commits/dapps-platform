@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-11-25T22:41:57.300182Z",
+  "generated_at": "2026-11-26T04:28:52.439869Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "The Block",
+      "date": "Nov 25",
+      "title": "Japan's SBI, SMFG launch Solana joint venture for stablecoin payments and tokenization - The Block",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSm5KWW5fbkJ0cDNucy1LSUppaTBzNFY5N0RWR3I2aWloWEgyQXpDQWlUbUlmWmRJY3JTWU1BOTFDNG5XVXgxMllBUXhwNElXQzc0bHdWdk1RbnFxLW9EUllUY1ppWkNqMllpc24taTU1dW5iZG90SUcwRm9lcXk1a3FLcFN2UkJBMlMwMklnM1V4NEliTjBpZHdTUGxqUG93MU51X3BjUmRYVnVPQnY2SGE3eWtlMEZ6WEItVA?oc=5"
+    },
+    {
+      "source": "The Block",
+      "date": "Nov 23",
+      "title": "Singapore's OCBC, StraitsX launch pilot for cross-border business stablecoin payments - The Block",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNS0diV3FKTVZzRVF6OFFralQ4cHNhSHY3M2xwOHd0eFd2Ync3bXhZYWJQN2hqVDdWbTlQdjBoQU5tcHpXU1VMWmFxbnUyNmw1akpqNnEwQThTR0FCeU5VcDJGZ3pQRWl5U2ZDbG85UWJuOU5JX2UyeWJwOUFKMjA1MVk1alE5d21CZmN2c3NodjV6cklGakZyQk9mWQ?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -29,20 +43,6 @@
       "title": "Cybersecurity Advisories",
       "summary": "Current U.S. cybersecurity advisories and defensive guidance relevant to technology and digital infrastructure.",
       "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
-    },
-    {
-      "source": "Federal Reserve",
-      "date": "POLICY",
-      "title": "Payments, Banking & Financial Innovation",
-      "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
-      "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }

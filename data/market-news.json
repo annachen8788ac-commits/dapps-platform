@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-11-28T04:46:32.386612Z",
+  "generated_at": "2026-11-28T13:40:57.537041Z",
   "editorial_standard": "Institutional, regulatory, infrastructure and security relevance; direct digital-asset relevance required; promotional and low-authority sources excluded.",
   "items": [
+    {
+      "source": "The Block",
+      "date": "Nov 25",
+      "title": "Japan's SBI, SMFG launch Solana joint venture for stablecoin payments and tokenization - The Block",
+      "summary": "Selected reporting relevant to institutional digital assets, market structure, regulation, tokenization, payments, infrastructure or security.",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSm5KWW5fbkJ0cDNucy1LSUppaTBzNFY5N0RWR3I2aWloWEgyQXpDQWlUbUlmWmRJY3JTWU1BOTFDNG5XVXgxMllBUXhwNElXQzc0bHdWdk1RbnFxLW9EUllUY1ppWkNqMllpc24taTU1dW5iZG90SUcwRm9lcXk1a3FLcFN2UkJBMlMwMklnM1V4NEliTjBpZHdTUGxqUG93MU51X3BjUmRYVnVPQnY2SGE3eWtlMEZ6WEItVA?oc=5"
+    },
     {
       "source": "U.S. SEC",
       "date": "POLICY",
@@ -36,13 +43,6 @@
       "title": "Payments, Banking & Financial Innovation",
       "summary": "Public Federal Reserve information relevant to payments, banking infrastructure, financial innovation and digital assets.",
       "url": "https://www.federalreserve.gov/newsevents.htm"
-    },
-    {
-      "source": "U.S. Treasury",
-      "date": "POLICY",
-      "title": "Digital Finance & Financial-System Policy",
-      "summary": "Public U.S. Treasury information relevant to financial markets, payments, sanctions, digital finance and policy.",
-      "url": "https://home.treasury.gov/news/press-releases"
     }
   ]
 }
